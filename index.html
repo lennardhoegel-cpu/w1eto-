@@ -1,0 +1,824 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#030817">
+<meta name="description" content="W1ETO.company – The Ultimate Creator Experience">
+<title>W1ETO.company | Ultra Max Pro Max</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --bg:#030817;
+  --panel:#09152b;
+  --blue:#167cff;
+  --cyan:#00eaff;
+  --purple:#7055ff;
+  --text:#f4f9ff;
+  --muted:#8ba5c9;
+  --border:#168cff35;
+}
+
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  background:var(--bg);
+  color:var(--text);
+  font-family:Inter,Arial,sans-serif;
+  overflow-x:hidden;
+}
+a{text-decoration:none;color:inherit}
+button,input,textarea{font:inherit}
+
+#particles{
+  position:fixed;
+  inset:0;
+  width:100%;
+  height:100%;
+  pointer-events:none;
+  z-index:-1;
+}
+
+body:before{
+  content:"";
+  position:fixed;
+  inset:0;
+  z-index:-2;
+  background:
+    radial-gradient(circle at 10% 10%,#0759bb44,transparent 35%),
+    radial-gradient(circle at 90% 50%,#1638a544,transparent 40%),
+    radial-gradient(circle at 50% 100%,#005eff22,transparent 45%);
+}
+
+header{
+  position:fixed;
+  top:0;
+  width:100%;
+  z-index:100;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:20px 7%;
+  background:#030817d9;
+  backdrop-filter:blur(20px);
+  border-bottom:1px solid var(--border);
+}
+
+.logo{
+  font-weight:900;
+  font-size:23px;
+  letter-spacing:-1px;
+}
+.logo span{color:var(--cyan);text-shadow:0 0 20px var(--cyan)}
+
+nav{display:flex;gap:25px}
+nav a{
+  font-size:11px;
+  font-weight:800;
+  color:#b6c8e5;
+  transition:.3s;
+}
+nav a:hover{color:var(--cyan)}
+
+.menu-toggle{
+  display:none;
+  background:none;
+  color:white;
+  border:1px solid var(--border);
+  border-radius:8px;
+  padding:8px 12px;
+  cursor:pointer;
+}
+
+.hero{
+  min-height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  padding:130px 20px 80px;
+  position:relative;
+  overflow:hidden;
+}
+
+.hero:before{
+  content:"";
+  position:absolute;
+  width:500px;
+  height:500px;
+  border-radius:50%;
+  background:#007bff;
+  filter:blur(170px);
+  opacity:.18;
+  animation:orb 8s infinite alternate ease-in-out;
+}
+
+@keyframes orb{
+  from{transform:translate(-100px,-50px)}
+  to{transform:translate(100px,70px)}
+}
+
+.hero-content{position:relative;z-index:2}
+
+.eyebrow{
+  display:inline-block;
+  padding:11px 20px;
+  border:1px solid #00eaff66;
+  border-radius:50px;
+  color:var(--cyan);
+  font-size:10px;
+  font-weight:900;
+  letter-spacing:4px;
+  background:#00eaff0b;
+  box-shadow:0 0 30px #00eaff22;
+  margin-bottom:35px;
+}
+
+.hero h1{
+  font-size:clamp(55px,11vw,130px);
+  line-height:.91;
+  letter-spacing:-8px;
+  font-weight:900;
+}
+
+.gradient{
+  background:linear-gradient(100deg,#fff,#00eaff,#168cff,#a6caff);
+  color:transparent;
+  background-clip:text;
+  -webkit-background-clip:text;
+  background-size:250%;
+  animation:gradient 6s linear infinite;
+}
+
+@keyframes gradient{
+  to{background-position:250% center}
+}
+
+.hero p{
+  color:var(--muted);
+  font-size:16px;
+  line-height:1.9;
+  margin:30px auto;
+}
+
+.actions{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:14px;
+}
+
+.btn{
+  padding:17px 27px;
+  display:inline-flex;
+  justify-content:center;
+  align-items:center;
+  gap:9px;
+  border-radius:10px;
+  border:1px solid #ffffff22;
+  font-size:11px;
+  font-weight:900;
+  transition:.3s;
+  cursor:pointer;
+}
+
+.btn:hover{
+  transform:translateY(-5px);
+  box-shadow:0 0 30px #168cff66;
+}
+
+.primary{
+  color:#001023;
+  background:linear-gradient(110deg,#168cff,#00eaff);
+  box-shadow:0 0 30px #168cff44;
+}
+.secondary{background:#ffffff0b}
+.discord-btn{background:#5865f2;border-color:#8790ff}
+
+.scroll{
+  margin-top:65px;
+  color:#7799c4;
+  font-size:10px;
+  letter-spacing:4px;
+  animation:bounce 2s infinite;
+}
+@keyframes bounce{
+  50%{transform:translateY(8px)}
+}
+
+section{
+  padding:105px 7%;
+  scroll-margin-top:80px;
+}
+
+.section-head{text-align:center;margin-bottom:50px}
+.section-head small{
+  color:var(--cyan);
+  font-size:10px;
+  font-weight:900;
+  letter-spacing:5px;
+}
+.section-head h2{
+  font-size:clamp(33px,5vw,55px);
+  letter-spacing:-2px;
+  margin-top:15px;
+  font-weight:900;
+}
+.section-head p{
+  color:var(--muted);
+  max-width:650px;
+  margin:15px auto 0;
+  line-height:1.8;
+}
+
+.panel{
+  max-width:1000px;
+  margin:auto;
+  padding:45px;
+  background:linear-gradient(145deg,#10264a,#071124);
+  border:1px solid var(--border);
+  border-radius:22px;
+  box-shadow:0 20px 70px #0006;
+}
+
+.about{text-align:center}
+.about h3{font-size:29px;margin-bottom:20px}
+.about p{color:var(--muted);line-height:1.9}
+
+.stats{
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:70px;
+  margin-top:40px;
+}
+.stat strong{
+  display:block;
+  color:var(--cyan);
+  font-size:30px;
+  text-shadow:0 0 20px #00eaff66;
+}
+.stat span{
+  color:var(--muted);
+  font-size:10px;
+  letter-spacing:2px;
+}
+
+.video-section{background:#ffffff04}
+
+.video-grid{
+  max-width:1100px;
+  margin:auto;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:20px;
+}
+
+.video-card{
+  background:linear-gradient(145deg,#10264a,#071124);
+  border:1px solid var(--border);
+  border-radius:17px;
+  overflow:hidden;
+  transition:.3s;
+}
+.video-card:hover{
+  transform:translateY(-7px);
+  box-shadow:0 15px 40px #007bff22;
+}
+
+.video-preview{
+  aspect-ratio:9/12;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  flex-direction:column;
+  gap:15px;
+  background:
+    radial-gradient(circle at center,#1554a5,#071124 70%);
+}
+.video-preview span{font-size:45px}
+.video-preview strong{font-size:13px;letter-spacing:2px}
+.video-info{padding:18px}
+.video-info p{color:var(--muted);font-size:12px;margin-bottom:16px}
+
+.video-actions{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:8px;
+}
+.like{
+  background:#ffffff0b;
+  color:white;
+  border:1px solid var(--border);
+  border-radius:8px;
+  padding:10px 13px;
+  cursor:pointer;
+}
+.like.active{color:#ff6699;border-color:#ff6699}
+
+.add-video-note{
+  text-align:center;
+  color:var(--muted);
+  font-size:12px;
+  line-height:1.8;
+  margin-top:25px;
+}
+
+.community{
+  max-width:850px;
+  margin:auto;
+  padding:35px;
+  border:1px solid var(--border);
+  border-radius:20px;
+  background:linear-gradient(145deg,#10264a,#071124);
+}
+
+.community h3{font-size:23px;margin-bottom:12px}
+.community>p{color:var(--muted);font-size:13px;line-height:1.8;margin-bottom:25px}
+
+.comment-form{display:grid;gap:13px}
+
+input,textarea{
+  width:100%;
+  padding:16px;
+  background:#030b1a;
+  color:white;
+  border:1px solid var(--border);
+  border-radius:10px;
+  outline:none;
+}
+input:focus,textarea:focus{border-color:var(--cyan)}
+textarea{min-height:110px;resize:vertical}
+
+.submit{
+  background:linear-gradient(100deg,#168cff,#00eaff);
+  border:0;
+  border-radius:10px;
+  padding:16px;
+  font-weight:900;
+  color:#001023;
+  cursor:pointer;
+}
+
+.comments{display:grid;gap:12px;margin-top:25px}
+.comment{
+  background:#ffffff08;
+  padding:17px;
+  border:1px solid var(--border);
+  border-radius:12px;
+}
+.comment strong{color:var(--cyan)}
+.comment p{color:#d9eaff;line-height:1.7;margin-top:8px}
+.comment small{color:#7794bc;display:block;margin-top:10px}
+
+.discord-section{
+  background:radial-gradient(ellipse at center,#104d9855,transparent 70%);
+}
+.discord-card{
+  max-width:950px;
+  margin:auto;
+  padding:70px 25px;
+  text-align:center;
+  border:1px solid #168cff77;
+  border-radius:25px;
+  background:linear-gradient(135deg,#12366b,#071124);
+  box-shadow:0 0 80px #007bff20;
+}
+.discord-icon{
+  font-size:65px;
+  margin-bottom:25px;
+  filter:drop-shadow(0 0 20px #168cff);
+}
+.discord-card h2{
+  font-size:clamp(32px,5vw,53px);
+  margin-bottom:18px;
+}
+.discord-card p{
+  max-width:600px;
+  color:var(--muted);
+  line-height:1.9;
+  margin:0 auto 30px;
+}
+
+footer{
+  border-top:1px solid var(--border);
+  padding:45px 20px;
+  text-align:center;
+  color:#7892b5;
+  font-size:12px;
+  line-height:2.1;
+}
+footer strong{color:var(--cyan)}
+footer a:hover{color:var(--cyan)}
+
+.reveal{
+  opacity:0;
+  transform:translateY(25px);
+  transition:.8s ease;
+}
+.reveal.visible{opacity:1;transform:translateY(0)}
+
+@media(max-width:700px){
+  header{padding:17px 5%}
+  .menu-toggle{display:block}
+  nav{
+    display:none;
+    position:absolute;
+    top:68px;
+    left:0;
+    width:100%;
+    padding:25px;
+    background:#061126;
+    flex-direction:column;
+    text-align:center;
+    border-bottom:1px solid var(--border);
+  }
+  nav.open{display:flex}
+  nav a{padding:8px}
+  .hero h1{letter-spacing:-4px}
+  section{padding:75px 6%}
+  .panel{padding:28px 20px}
+  .stats{gap:30px}
+  .community{padding:22px}
+}
+</style>
+</head>
+
+<body>
+
+<canvas id="particles"></canvas>
+
+<header>
+  <a href="#home" class="logo">W1ETO<span>.</span>company</a>
+
+  <button class="menu-toggle" id="menuToggle" aria-label="Menü öffnen">☰</button>
+
+  <nav id="nav">
+    <a href="#home">HOME</a>
+    <a href="#about">ABOUT</a>
+    <a href="#videos">VIDEOS</a>
+    <a href="#community">COMMUNITY</a>
+    <a href="#discord">DISCORD</a>
+  </nav>
+</header>
+
+<main>
+
+<section class="hero" id="home">
+  <div class="hero-content">
+    <div class="eyebrow">✦ THE ULTIMATE CREATOR EXPERIENCE ✦</div>
+
+    <h1>W1ETO<span class="gradient">.</span><br>
+      <span class="gradient">COMPANY</span>
+    </h1>
+
+    <p>
+      CREATE YOUR WORLD.<br>
+      BUILD YOUR COMMUNITY.<br>
+      MAKE YOUR OWN LEGACY.
+    </p>
+
+    <div class="actions">
+      <a class="btn primary" href="https://www.tiktok.com/@W1ETO.company" target="_blank" rel="noopener">♫ TIKTOK</a>
+      <a class="btn discord-btn" href="https://discord.gg/Xy2KTmJUbR" target="_blank" rel="noopener">DISCORD ↗</a>
+      <a class="btn secondary" href="#videos">EXPLORE ↓</a>
+    </div>
+
+    <div class="scroll">SCROLL TO EXPLORE ↓</div>
+  </div>
+</section>
+
+<section id="about" class="reveal">
+  <div class="section-head">
+    <small>DISCOVER THE BRAND</small>
+    <h2>MORE THAN CONTENT.</h2>
+    <p>Eine Marke. Eine Community. Eine gemeinsame Leidenschaft.</p>
+  </div>
+
+  <div class="panel about">
+    <h3>WELCOME TO W1ETO.company</h3>
+    <p>
+      Willkommen auf der offiziellen W1ETO-Plattform.
+      Entdecke unsere Videos, vernetze dich mit anderen
+      Mitgliedern und werde Teil unserer Community.
+      Hier dreht sich alles um Content und Kreativität.
+    </p>
+
+    <div class="stats">
+      <div class="stat"><strong>∞</strong><span>CREATIVITY</span></div>
+      <div class="stat"><strong>24/7</strong><span>COMMUNITY</span></div>
+      <div class="stat"><strong>01</strong><span>BRAND</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="video-section reveal" id="videos">
+  <div class="section-head">
+    <small>WATCH & DISCOVER</small>
+    <h2>THE VIDEO UNIVERSE</h2>
+    <p>Die Inhalte von W1ETO.company – direkt auf einer Plattform.</p>
+  </div>
+
+  <div class="video-grid" id="videoGrid"></div>
+
+  <p class="add-video-note">
+    Neue Videos können über die VIDEO_URLS-Liste im Code ergänzt werden.
+    Alle Videos auf TikTok ansehen:
+    <a href="https://www.tiktok.com/@W1ETO.company" target="_blank" rel="noopener" style="color:var(--cyan)">TikTok-Profil ↗</a>
+  </p>
+</section>
+
+<section id="community" class="reveal">
+  <div class="section-head">
+    <small>YOUR VOICE MATTERS</small>
+    <h2>COMMUNITY WALL</h2>
+    <p>Deine Community. Deine Meinung. Deine Nachrichten.</p>
+  </div>
+
+  <div class="community">
+    <h3>💬 Leave your message</h3>
+    <p>Hinterlasse einen Kommentar für andere Besucher.</p>
+
+    <form class="comment-form" id="commentForm">
+      <input id="username" maxlength="30" placeholder="Dein Name" required>
+      <textarea id="message" maxlength="500" placeholder="Was möchtest du sagen?" required></textarea>
+      <button class="submit" type="submit">POST COMMENT ↗</button>
+    </form>
+
+    <div class="comments" id="comments"></div>
+  </div>
+</section>
+
+<section class="discord-section reveal" id="discord">
+  <div class="discord-card">
+    <div class="discord-icon">💠</div>
+    <div class="section-head" style="margin-bottom:20px">
+      <small>JOIN THE COMMUNITY</small>
+      <h2>ENTER THE BLUE ZONE.</h2>
+    </div>
+    <p>
+      Werde Teil des offiziellen W1ETO.company Discord-Servers.
+      Triff neue Leute, tausche dich aus und bleibe auf dem Laufenden.
+    </p>
+    <a class="btn discord-btn" href="https://discord.gg/Xy2KTmJUbR" target="_blank" rel="noopener">
+      JOIN OUR DISCORD ↗
+    </a>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <strong>W1ETO.company</strong><br>
+  THE ULTIMATE CREATOR EXPERIENCE<br>
+  <a href="#home">BACK TO TOP ↑</a><br><br>
+  © 2026 W1ETO.company · ALL RIGHTS RESERVED
+</footer>
+
+<script>
+// ======================================
+// W1ETO VIDEO CONFIGURATION
+// Hier deine TikTok-Videolinks eintragen.
+// ======================================
+
+const VIDEO_URLS = [
+  // "https://www.tiktok.com/@W1ETO.company/video/VIDEO_ID",
+  // "https://www.tiktok.com/@W1ETO.company/video/VIDEO_ID"
+];
+
+const grid = document.getElementById("videoGrid");
+
+function renderVideos(){
+  grid.replaceChildren();
+
+  if(!VIDEO_URLS.length){
+    const card = document.createElement("article");
+    card.className = "video-card";
+
+    const preview = document.createElement("div");
+    preview.className = "video-preview";
+    preview.innerHTML = "<span>▶</span><strong>W1ETO VIDEO ZONE</strong>";
+
+    const info = document.createElement("div");
+    info.className = "video-info";
+
+    const description = document.createElement("p");
+    description.textContent = "Deine TikTok-Videos erscheinen hier, sobald du ihre Videolinks in VIDEO_URLS einfügst.";
+
+    const link = document.createElement("a");
+    link.className = "btn primary";
+    link.href = "https://www.tiktok.com/@W1ETO.company";
+    link.target = "_blank";
+    link.rel = "noopener";
+    link.textContent = "VIDEOS ANSEHEN ↗";
+
+    info.append(description,link);
+    card.append(preview,info);
+    grid.append(card);
+    return;
+  }
+
+  VIDEO_URLS.forEach((url,index)=>{
+    const card = document.createElement("article");
+    card.className = "video-card";
+
+    const preview = document.createElement("div");
+    preview.className = "video-preview";
+    preview.innerHTML = "<span>▶</span><strong>W1ETO VIDEO "+(index+1)+"</strong>";
+
+    const info = document.createElement("div");
+    info.className = "video-info";
+
+    const description = document.createElement("p");
+    description.textContent = "W1ETO.company · TikTok Video";
+
+    const actions = document.createElement("div");
+    actions.className = "video-actions";
+
+    const key = "w1eto_like_"+index;
+    let liked = localStorage.getItem(key)==="true";
+
+    const like = document.createElement("button");
+    like.className = "like"+(liked?" active":"");
+
+    function updateLike(){
+      like.textContent = (liked?"♥":"♡")+" "+(liked?"Geliked":"Gefällt mir");
+      like.classList.toggle("active",liked);
+    }
+
+    like.addEventListener("click",()=>{
+      liked=!liked;
+      localStorage.setItem(key,String(liked));
+      updateLike();
+    });
+    updateLike();
+
+    const watch = document.createElement("a");
+    watch.className = "btn primary";
+    watch.href = url;
+    watch.target = "_blank";
+    watch.rel = "noopener";
+    watch.textContent = "WATCH ↗";
+
+    actions.append(like,watch);
+    info.append(description,actions);
+    card.append(preview,info);
+    grid.append(card);
+  });
+}
+renderVideos();
+
+// ======================================
+// COMMUNITY COMMENTS - LOCAL DEMO
+// ======================================
+
+const form=document.getElementById("commentForm");
+const box=document.getElementById("comments");
+let comments=[];
+
+try{
+  comments=JSON.parse(localStorage.getItem("w1eto_comments")||"[]");
+  if(!Array.isArray(comments))comments=[];
+}catch{comments=[];}
+
+function renderComments(){
+  box.replaceChildren();
+
+  if(!comments.length){
+    const empty=document.createElement("p");
+    empty.textContent="Noch keine Kommentare. Sei der Erste!";
+    empty.style.color="#8ba5c9";
+    box.append(empty);
+    return;
+  }
+
+  comments.slice(-30).reverse().forEach(c=>{
+    const item=document.createElement("div");
+    item.className="comment";
+
+    const name=document.createElement("strong");
+    name.textContent=c.name;
+
+    const message=document.createElement("p");
+    message.textContent=c.message;
+
+    const date=document.createElement("small");
+    date.textContent=c.date;
+
+    item.append(name,message,date);
+    box.append(item);
+  });
+}
+
+form.addEventListener("submit",e=>{
+  e.preventDefault();
+
+  const name=document.getElementById("username").value.trim();
+  const message=document.getElementById("message").value.trim();
+
+  if(!name||!message)return;
+
+  comments.push({
+    name,
+    message,
+    date:new Date().toLocaleString("de-DE")
+  });
+
+  try{
+    localStorage.setItem("w1eto_comments",JSON.stringify(comments));
+  }catch{
+    comments.pop();
+    alert("Speichern nicht möglich.");
+    return;
+  }
+
+  form.reset();
+  renderComments();
+});
+
+renderComments();
+
+// ======================================
+// MOBILE NAVIGATION
+// ======================================
+
+const menu=document.getElementById("menuToggle");
+const nav=document.getElementById("nav");
+
+menu.addEventListener("click",()=>{
+  nav.classList.toggle("open");
+});
+
+nav.querySelectorAll("a").forEach(a=>{
+  a.addEventListener("click",()=>nav.classList.remove("open"));
+});
+
+// ======================================
+// SCROLL ANIMATIONS
+// ======================================
+
+const observer=new IntersectionObserver(entries=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting){
+      entry.target.classList.add("visible");
+      observer.unobserve(entry.target);
+    }
+  });
+},{threshold:.12});
+
+document.querySelectorAll(".reveal").forEach(el=>observer.observe(el));
+
+// ======================================
+// ANIMATED BLUE PARTICLES
+// ======================================
+
+const canvas=document.getElementById("particles");
+const ctx=canvas.getContext("2d");
+let particles=[];
+
+function resize(){
+  const dpr=Math.min(window.devicePixelRatio||1,2);
+  canvas.width=innerWidth*dpr;
+  canvas.height=innerHeight*dpr;
+  ctx.setTransform(dpr,0,0,dpr,0,0);
+
+  particles=Array.from({length:Math.min(65,Math.floor(innerWidth/18))},()=>({
+    x:Math.random()*innerWidth,
+    y:Math.random()*innerHeight,
+    r:Math.random()*1.8+.5,
+    speed:Math.random()*.35+.12
+  }));
+}
+
+function animate(){
+  ctx.clearRect(0,0,innerWidth,innerHeight);
+
+  particles.forEach(p=>{
+    p.y-=p.speed;
+    if(p.y<0){
+      p.y=innerHeight;
+      p.x=Math.random()*innerWidth;
+    }
+
+    ctx.beginPath();
+    ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
+    ctx.fillStyle="#39baff";
+    ctx.shadowBlur=12;
+    ctx.shadowColor="#168cff";
+    ctx.fill();
+  });
+
+  requestAnimationFrame(animate);
+}
+
+resize();
+window.addEventListener("resize",resize);
+animate();
+</script>
+
+</body>
+</html>

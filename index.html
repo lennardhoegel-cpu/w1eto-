@@ -1,781 +1,1216 @@
+
 <!DOCTYPE html>
 <html lang="de">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#050916">
-<meta name="description" content="W1ETO.company — Official Creator Universe">
-<title>W1ETO.company | NEXUS X</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#030817">
+<meta name="description" content="W1ETO.company – Enter the blue universe. Videos, Community und Creator-Content.">
+<title>W1ETO.company // OVERDRIVE</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
 :root {
- --bg:#050916;
- --panel:#0a1428;
- --panel2:#0d1d38;
- --blue:#167cff;
- --cyan:#00eaff;
- --purple:#8065ff;
- --text:#f5f9ff;
- --muted:#8da5c9;
- --line:#4a9eff30;
+  --bg: #030817;
+  --blue: #087cff;
+  --cyan: #00eaff;
+  --electric: #4d9fff;
+  --text: #edf7ff;
+  --muted: #8ba9c9;
+  --panel: rgba(7, 25, 55, .72);
+  --line: rgba(65, 165, 255, .2);
+  --glow: 0 0 35px rgba(0,130,255,.35);
 }
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{
- background:var(--bg);
- color:var(--text);
- font-family:Inter,Arial,sans-serif;
- overflow-x:hidden;
-}
-a{color:inherit;text-decoration:none}
-button,input,textarea{font:inherit}
-button{cursor:pointer}
-#space{
- position:fixed;inset:0;width:100%;height:100%;
- z-index:-1;pointer-events:none;
-}
-body:before{
- content:"";position:fixed;inset:0;z-index:-2;
- background:
- radial-gradient(ellipse at 15% 10%,#0757b444,transparent 40%),
- radial-gradient(ellipse at 90% 55%,#2633a333,transparent 40%),
- linear-gradient(180deg,#050916,#071127);
-}
-body:after{
- content:"";position:fixed;inset:0;z-index:-1;
- pointer-events:none;opacity:.13;
- background-image:radial-gradient(#72c9ff 1px,transparent 1px);
- background-size:35px 35px;
-}
-header{
- position:fixed;top:0;left:0;width:100%;z-index:100;
- height:76px;padding:0 6%;
- display:flex;align-items:center;justify-content:space-between;
- background:#050916d9;backdrop-filter:blur(22px);
- border-bottom:1px solid var(--line);
-}
-.brand{font-size:22px;font-weight:900;letter-spacing:-1px}
-.brand span{color:var(--cyan);text-shadow:0 0 20px var(--cyan)}
-.nav{display:flex;align-items:center;gap:27px}
-.nav a{font-size:11px;font-weight:800;color:#b9c9e5;transition:.2s}
-.nav a:hover{color:var(--cyan)}
-.nav .nav-join{
- padding:11px 17px;border:1px solid #168cff77;
- border-radius:8px;color:var(--cyan);
-}
-.menu{
- display:none;background:none;color:white;
- border:1px solid var(--line);padding:9px 12px;border-radius:8px;
-}
-.hero{
- min-height:100vh;display:grid;place-items:center;
- text-align:center;padding:140px 20px 90px;position:relative;
- overflow:hidden;
-}
-.hero-glow{
- position:absolute;width:500px;height:500px;border-radius:50%;
- background:#007bff;filter:blur(160px);opacity:.2;
- animation:float 8s ease-in-out infinite alternate;
-}
-@keyframes float{
- to{transform:translate(100px,50px) scale(1.3)}
-}
-.hero-content{position:relative;z-index:2}
-.status{
- display:inline-flex;align-items:center;gap:10px;
- padding:10px 17px;border:1px solid #00eaff55;
- border-radius:50px;background:#00eaff0c;
- color:var(--cyan);font-size:10px;font-weight:900;
- letter-spacing:3px;
-}
-.dot{
- width:7px;height:7px;background:#00eaff;border-radius:50%;
- box-shadow:0 0 15px #00eaff;
-}
-.hero h1{
- font-size:clamp(60px,12vw,145px);
- font-weight:900;line-height:.88;letter-spacing:-9px;
- margin:38px 0 28px;
-}
-.gradient{
- background:linear-gradient(100deg,#fff,#00eaff,#168cff,#a58cff);
- background-size:250%;background-clip:text;
- -webkit-background-clip:text;color:transparent;
- animation:shine 6s linear infinite;
-}
-@keyframes shine{to{background-position:250%}}
-.hero p{
- color:var(--muted);font-size:15px;line-height:1.9;
- margin-bottom:32px;
-}
-.actions{display:flex;justify-content:center;flex-wrap:wrap;gap:13px}
-.btn{
- display:inline-flex;align-items:center;justify-content:center;gap:9px;
- padding:16px 23px;border-radius:9px;
- font-size:11px;font-weight:900;
- border:1px solid #ffffff25;transition:.25s;
-}
-.btn:hover{transform:translateY(-5px);box-shadow:0 0 30px #168cff55}
-.primary{background:linear-gradient(110deg,#167cff,#00dfff);color:#001123}
-.discord-btn{background:#5865f2;border-color:#8b99ff}
-.ghost{background:#ffffff08}
-.hero-foot{
- margin-top:80px;color:#647d9f;font-size:10px;letter-spacing:4px;
- animation:bob 2s infinite;
-}
-@keyframes bob{50%{transform:translateY(7px)}}
 
-.ticker{
- overflow:hidden;border-top:1px solid var(--line);
- border-bottom:1px solid var(--line);background:#0b1a32;
- padding:16px 0;white-space:nowrap;
-}
-.ticker-track{
- display:inline-flex;gap:45px;
- animation:marquee 30s linear infinite;
- color:#8ab8ed;font-size:11px;font-weight:900;letter-spacing:4px;
-}
-@keyframes marquee{to{transform:translateX(-50%)}}
+* { box-sizing: border-box; margin: 0; padding: 0; }
 
-section{padding:105px 7%;scroll-margin-top:85px}
-.heading{text-align:center;margin-bottom:48px}
-.heading small{
- color:var(--cyan);font-size:10px;font-weight:900;letter-spacing:5px;
-}
-.heading h2{
- font-size:clamp(34px,5vw,58px);font-weight:900;
- letter-spacing:-2px;margin-top:14px;
-}
-.heading p{
- color:var(--muted);max-width:650px;margin:15px auto 0;
- line-height:1.8;font-size:14px;
-}
-.glass{
- background:linear-gradient(145deg,#102445dd,#081226ee);
- border:1px solid var(--line);border-radius:20px;
- box-shadow:0 20px 70px #0006, inset 0 1px #ffffff0a;
-}
-.about-box{
- max-width:1000px;margin:auto;padding:50px 35px;text-align:center;
-}
-.about-box h3{font-size:28px;margin-bottom:16px}
-.about-box p{color:var(--muted);line-height:1.9;max-width:720px;margin:auto}
-.stats{
- display:grid;grid-template-columns:repeat(3,1fr);
- gap:15px;margin-top:40px;
-}
-.stat{
- padding:22px 10px;border:1px solid var(--line);
- border-radius:13px;background:#ffffff05;
-}
-.stat strong{display:block;color:var(--cyan);font-size:29px}
-.stat span{font-size:10px;color:var(--muted);letter-spacing:2px}
+html { scroll-behavior: smooth; }
 
-.video-section{background:#ffffff03}
-.toolbar{
- max-width:1100px;margin:0 auto 25px;
- display:flex;gap:12px;flex-wrap:wrap;justify-content:space-between;
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Rajdhani', sans-serif;
+  overflow-x: hidden;
+  min-height: 100vh;
 }
-.search{
- flex:1;min-width:200px;background:#0a1428;color:white;
- border:1px solid var(--line);border-radius:10px;padding:14px 17px;
- outline:none;
-}
-.search:focus{border-color:var(--cyan)}
-.filters{display:flex;gap:8px;flex-wrap:wrap}
-.filter{
- border:1px solid var(--line);background:#0a1428;color:#a9bddb;
- border-radius:8px;padding:12px 15px;font-size:10px;font-weight:900;
-}
-.filter.active{background:#0879df;color:white;border-color:#00dfff}
-.video-grid{
- max-width:1100px;margin:auto;
- display:grid;grid-template-columns:repeat(auto-fit,minmax(245px,1fr));
- gap:20px;
-}
-.video-card{
- background:linear-gradient(145deg,#102445,#081226);
- border:1px solid var(--line);border-radius:16px;
- overflow:hidden;transition:.3s;
-}
-.video-card:hover{
- transform:translateY(-7px);
- border-color:#00cfff99;
- box-shadow:0 15px 40px #007bff22;
-}
-.video-thumb{
- aspect-ratio:9/12;position:relative;
- display:grid;place-items:center;
- background:
- radial-gradient(circle at 50% 40%,#1267ba,#071329 70%);
- overflow:hidden;
-}
-.video-thumb:before{
- content:"";position:absolute;inset:-50%;
- background:linear-gradient(120deg,transparent 40%,#ffffff12 50%,transparent 60%);
- transform:translateX(-60%);
- transition:.7s;
-}
-.video-card:hover .video-thumb:before{transform:translateX(60%)}
-.play{
- position:relative;width:65px;height:65px;
- display:grid;place-items:center;border-radius:50%;
- background:#00cfff22;border:1px solid #00dfff99;
- color:white;font-size:24px;box-shadow:0 0 35px #008cff55;
-}
-.video-tag{
- position:absolute;top:14px;left:14px;
- background:#071b35cc;border:1px solid var(--line);
- color:var(--cyan);font-size:9px;font-weight:900;
- padding:8px 10px;border-radius:5px;
-}
-.video-body{padding:17px}
-.video-body h3{font-size:14px;margin-bottom:8px}
-.video-body p{font-size:11px;color:var(--muted);line-height:1.6}
-.video-bottom{
- display:flex;justify-content:space-between;align-items:center;
- gap:8px;margin-top:16px;
-}
-.like{
- padding:9px 12px;background:#ffffff08;
- border:1px solid var(--line);border-radius:8px;color:#c6d9f3;
- font-size:11px;
-}
-.like.active{color:#ff7bba;border-color:#ff7bba}
-.watch{
- padding:10px 13px;background:#0879df;
- border-radius:8px;font-size:10px;font-weight:900;
-}
-.empty{
- grid-column:1/-1;text-align:center;padding:35px;
- color:var(--muted);line-height:1.8;
-}
-.note{
- max-width:900px;margin:22px auto 0;
- color:#718aa9;text-align:center;font-size:11px;line-height:1.8;
-}
-.note a{color:var(--cyan)}
 
-.community{
- max-width:850px;margin:auto;padding:30px;
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -3;
+  background:
+    radial-gradient(ellipse at 15% 10%, rgba(0,100,255,.23), transparent 40%),
+    radial-gradient(ellipse at 90% 35%, rgba(0,225,255,.12), transparent 38%),
+    radial-gradient(ellipse at 50% 100%, rgba(0,65,190,.2), transparent 50%),
+    #030817;
 }
-.community h3{font-size:22px;margin-bottom:10px}
-.community>p{color:var(--muted);font-size:12px;line-height:1.8;margin-bottom:20px}
-.comment-form{display:grid;gap:12px}
-.field{
- width:100%;background:#040b19;border:1px solid var(--line);
- border-radius:10px;padding:15px;color:white;outline:none;
-}
-.field:focus{border-color:var(--cyan)}
-textarea.field{min-height:100px;resize:vertical}
-.post{
- background:linear-gradient(100deg,#167cff,#00dfff);
- color:#001123;border:0;padding:15px;border-radius:9px;
- font-size:11px;font-weight:900;
-}
-.comments{display:grid;gap:12px;margin-top:25px}
-.comment{
- padding:16px;border:1px solid var(--line);
- border-radius:11px;background:#ffffff05;
-}
-.comment strong{color:var(--cyan);font-size:13px}
-.comment p{margin-top:8px;color:#d5e5fa;font-size:13px;line-height:1.7}
-.comment small{display:block;margin-top:10px;color:#6985a9;font-size:10px}
 
-.discord-area{
- background:radial-gradient(ellipse at center,#103f8055,transparent 70%);
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  opacity: .16;
+  pointer-events: none;
+  background-image:
+    linear-gradient(rgba(65,155,255,.13) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(65,155,255,.13) 1px, transparent 1px);
+  background-size: 55px 55px;
+  mask-image: linear-gradient(to bottom, black, transparent 85%);
 }
-.discord-card{
- max-width:1000px;margin:auto;padding:65px 25px;text-align:center;
- background:linear-gradient(130deg,#132e5a,#09152c);
- border:1px solid #4c83ff77;border-radius:23px;
- box-shadow:0 0 75px #087bff22;
-}
-.discord-symbol{
- font-size:65px;margin-bottom:22px;
- filter:drop-shadow(0 0 20px #168cff);
-}
-.discord-card h2{font-size:clamp(32px,5vw,55px);margin-bottom:15px}
-.discord-card p{
- color:var(--muted);max-width:600px;
- line-height:1.9;margin:0 auto 28px;
-}
-.discord-link{
- display:inline-block;padding:17px 28px;
- border-radius:9px;background:#5865f2;
- font-size:11px;font-weight:900;
- box-shadow:0 10px 30px #5865f255;
- transition:.3s;
-}
-.discord-link:hover{transform:translateY(-5px)}
 
-.footer{
- padding:45px 20px;text-align:center;
- border-top:1px solid var(--line);
- color:#7189a9;font-size:11px;line-height:2.2;
-}
-.footer strong{color:var(--cyan)}
-.footer a:hover{color:var(--cyan)}
+a { color: inherit; text-decoration: none; }
+button { font: inherit; }
 
-.toast{
- position:fixed;bottom:25px;left:50%;
- transform:translate(-50%,20px);
- opacity:0;pointer-events:none;
- background:#102a4b;border:1px solid #00dfff88;
- padding:14px 20px;border-radius:10px;
- color:white;font-size:12px;z-index:300;
- transition:.3s;
+#particles {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  pointer-events: none;
 }
-.toast.show{opacity:1;transform:translate(-50%,0)}
-.reveal{opacity:0;transform:translateY(20px);transition:.7s}
-.reveal.visible{opacity:1;transform:translateY(0)}
 
-@media(max-width:700px){
- header{height:68px;padding:0 5%}
- .menu{display:block}
- .nav{
-  display:none;position:absolute;top:68px;left:0;width:100%;
-  padding:20px;background:#071329;flex-direction:column;
-  gap:22px;text-align:center;border-bottom:1px solid var(--line);
- }
- .nav.open{display:flex}
- .hero h1{letter-spacing:-4px}
- section{padding:75px 6%}
- .about-box{padding:30px 20px}
- .stats{gap:8px}
- .stat strong{font-size:22px}
- .stat span{font-size:8px}
- .toolbar{flex-direction:column}
- .filters{justify-content:center}
- .community{padding:22px}
+#progress {
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  left: 0;
+  height: 3px;
+  width: 0;
+  background: linear-gradient(90deg, var(--blue), var(--cyan));
+  box-shadow: 0 0 18px var(--cyan);
 }
-@media(prefers-reduced-motion:reduce){
- *,*:before,*:after{animation:none!important;scroll-behavior:auto!important;transition:none!important}
- .reveal{opacity:1;transform:none}
+
+.nav {
+  position: fixed;
+  z-index: 100;
+  top: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(1160px, calc(100% - 32px));
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 18px;
+  border: 1px solid rgba(100,190,255,.2);
+  border-radius: 18px;
+  background: rgba(3,12,31,.76);
+  backdrop-filter: blur(22px);
+  box-shadow: 0 10px 50px rgba(0,0,0,.3);
+}
+
+.logo {
+  font-family: Orbitron, sans-serif;
+  font-size: 17px;
+  font-weight: 900;
+  letter-spacing: 2px;
+  color: white;
+}
+
+.logo span { color: var(--cyan); }
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  font-size: 17px;
+  font-weight: 700;
+  color: #b9d5f2;
+}
+
+.nav-links a { transition: .2s; }
+.nav-links a:hover { color: var(--cyan); text-shadow: 0 0 15px var(--cyan); }
+
+.nav-actions { display: flex; align-items: center; gap: 9px; }
+
+.icon-btn {
+  width: 39px;
+  height: 39px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: rgba(15,60,110,.35);
+  color: var(--cyan);
+  cursor: pointer;
+  transition: .2s;
+}
+
+.icon-btn:hover {
+  background: rgba(0,130,255,.25);
+  box-shadow: var(--glow);
+  transform: translateY(-2px);
+}
+
+.menu-toggle { display: none; }
+
+.hero {
+  min-height: 850px;
+  padding: 170px 20px 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  text-align: center;
+  overflow: hidden;
+}
+
+.hero-content { max-width: 1050px; position: relative; z-index: 2; }
+
+.status {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 9px 16px;
+  border: 1px solid rgba(0,234,255,.28);
+  border-radius: 50px;
+  background: rgba(0,120,255,.1);
+  color: #a8f7ff;
+  font-family: Orbitron, sans-serif;
+  font-size: 10px;
+  letter-spacing: 2px;
+  box-shadow: 0 0 25px rgba(0,190,255,.1);
+}
+
+.status-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #00ffb3;
+  box-shadow: 0 0 12px #00ffb3;
+  animation: blink 1.5s infinite;
+}
+
+@keyframes blink { 50% { opacity: .3; } }
+
+.hero h1 {
+  margin: 30px 0 15px;
+  font-family: Orbitron, sans-serif;
+  font-size: clamp(48px, 10vw, 112px);
+  line-height: .98;
+  font-weight: 900;
+  letter-spacing: -5px;
+  text-transform: uppercase;
+  text-shadow: 0 0 35px rgba(0,130,255,.3);
+}
+
+.hero h1 .blue {
+  display: block;
+  background: linear-gradient(100deg, #fff 5%, #72baff 35%, #00eaff 65%, #2380ff 90%);
+  background-size: 220% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: shine 5s linear infinite;
+  filter: drop-shadow(0 0 22px rgba(0,160,255,.35));
+}
+
+@keyframes shine { to { background-position: 220% center; } }
+
+.hero p {
+  max-width: 620px;
+  margin: 25px auto 32px;
+  color: #a5bdd8;
+  font-size: 22px;
+  line-height: 1.5;
+}
+
+.hero-buttons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+.btn {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  padding: 15px 25px;
+  border-radius: 12px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  font-family: Orbitron, sans-serif;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  transition: .25s;
+}
+
+.btn-primary {
+  color: #001323;
+  background: linear-gradient(110deg, #00eaff, #348aff);
+  box-shadow: 0 0 25px rgba(0,160,255,.35);
+}
+
+.btn-primary:hover {
+  transform: translateY(-4px) scale(1.03);
+  box-shadow: 0 0 45px rgba(0,200,255,.6);
+}
+
+.btn-outline {
+  color: white;
+  background: rgba(15,55,100,.35);
+  border-color: rgba(0,210,255,.35);
+}
+
+.btn-outline:hover {
+  background: rgba(0,130,255,.2);
+  border-color: var(--cyan);
+  box-shadow: var(--glow);
+  transform: translateY(-4px);
+}
+
+.hero-orb {
+  position: absolute;
+  width: 470px;
+  height: 470px;
+  border-radius: 50%;
+  border: 1px solid rgba(0,190,255,.13);
+  box-shadow: inset 0 0 100px rgba(0,100,255,.08), 0 0 100px rgba(0,100,255,.08);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-43%);
+  z-index: 0;
+  animation: orb 18s linear infinite;
+}
+
+.hero-orb::before, .hero-orb::after {
+  content: "";
+  position: absolute;
+  inset: 35px;
+  border: 1px solid rgba(0,220,255,.18);
+  border-radius: 50%;
+  transform: rotateX(65deg);
+}
+
+.hero-orb::after {
+  inset: 75px;
+  transform: rotateY(65deg);
+  border-color: rgba(60,140,255,.25);
+}
+
+@keyframes orb { to { transform: translate(-50%,-43%) rotate(360deg); } }
+
+.hero-stats {
+  margin: 65px auto 0;
+  display: flex;
+  justify-content: center;
+  gap: 55px;
+  flex-wrap: wrap;
+}
+
+.stat strong {
+  display: block;
+  font-family: Orbitron, sans-serif;
+  font-size: 25px;
+  color: var(--cyan);
+  text-shadow: 0 0 20px rgba(0,220,255,.4);
+}
+
+.stat span {
+  display: block;
+  margin-top: 5px;
+  color: #829dbb;
+  font-size: 13px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.ticker {
+  overflow: hidden;
+  border-block: 1px solid rgba(0,170,255,.2);
+  background: rgba(0,70,150,.12);
+  padding: 15px 0;
+}
+
+.ticker-track {
+  display: flex;
+  width: max-content;
+  animation: ticker 28s linear infinite;
+}
+
+.ticker span {
+  margin: 0 30px;
+  color: #9bcfff;
+  font-family: Orbitron, sans-serif;
+  font-size: 12px;
+  letter-spacing: 3px;
+}
+
+.ticker b { color: var(--cyan); }
+
+@keyframes ticker { to { transform: translateX(-50%); } }
+
+.section {
+  width: min(1160px, calc(100% - 40px));
+  margin: 0 auto;
+  padding: 105px 0;
+}
+
+.section-head { margin-bottom: 35px; }
+
+.eyebrow {
+  color: var(--cyan);
+  font-family: Orbitron, sans-serif;
+  font-size: 10px;
+  letter-spacing: 3px;
+  margin-bottom: 13px;
+}
+
+.section h2 {
+  font-family: Orbitron, sans-serif;
+  font-size: clamp(28px, 5vw, 48px);
+  letter-spacing: -1px;
+}
+
+.section h2 span { color: var(--cyan); }
+
+.section-desc {
+  color: var(--muted);
+  font-size: 18px;
+  margin-top: 12px;
+}
+
+.panel {
+  border: 1px solid rgba(75,165,255,.2);
+  border-radius: 22px;
+  background: linear-gradient(145deg, rgba(11,36,77,.75), rgba(4,15,37,.8));
+  box-shadow: 0 25px 80px rgba(0,0,0,.18), inset 0 1px rgba(255,255,255,.04);
+}
+
+.video-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  flex-wrap: wrap;
+  margin-bottom: 25px;
+}
+
+.search-wrap {
+  flex: 1;
+  min-width: 220px;
+  position: relative;
+}
+
+.search-wrap input {
+  width: 100%;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 14px 16px 14px 43px;
+  background: rgba(3,15,35,.8);
+  color: white;
+  outline: none;
+  font: inherit;
+  font-size: 17px;
+}
+
+.search-wrap input:focus { border-color: var(--cyan); box-shadow: 0 0 20px rgba(0,200,255,.12); }
+.search-icon { position: absolute; left: 15px; top: 12px; color: var(--cyan); }
+
+.filters { display: flex; gap: 8px; flex-wrap: wrap; }
+
+.filter {
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 10px 15px;
+  background: rgba(5,25,55,.8);
+  color: #a9c5e4;
+  cursor: pointer;
+  transition: .2s;
+}
+
+.filter.active, .filter:hover {
+  color: #001322;
+  background: var(--cyan);
+  border-color: var(--cyan);
+}
+
+.video-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.video-card {
+  overflow: hidden;
+  border-radius: 17px;
+  border: 1px solid rgba(80,160,255,.2);
+  background: rgba(6,20,45,.9);
+  transition: transform .3s, border-color .3s, box-shadow .3s;
+  transform-style: preserve-3d;
+}
+
+.video-card:hover {
+  border-color: rgba(0,225,255,.65);
+  box-shadow: 0 15px 45px rgba(0,110,255,.17);
+  transform: translateY(-7px);
+}
+
+.video-cover {
+  min-height: 220px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 50% 45%, rgba(0,220,255,.28), transparent 35%),
+    linear-gradient(135deg, #071a45, #063c80 55%, #031329);
+}
+
+.video-cover::before {
+  content: "";
+  position: absolute;
+  width: 180px;
+  height: 180px;
+  border: 1px solid rgba(0,230,255,.3);
+  border-radius: 50%;
+  box-shadow: 0 0 50px rgba(0,170,255,.2), inset 0 0 50px rgba(0,170,255,.2);
+  animation: orb 18s linear infinite;
+}
+
+.play {
+  position: relative;
+  z-index: 1;
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  padding-left: 4px;
+  color: white;
+  font-size: 20px;
+  border: 1px solid rgba(255,255,255,.6);
+  background: rgba(0,130,255,.3);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0 30px rgba(0,200,255,.5);
+}
+
+.video-tag {
+  position: absolute;
+  top: 13px;
+  left: 13px;
+  padding: 6px 10px;
+  background: rgba(0,10,30,.65);
+  border: 1px solid rgba(0,220,255,.3);
+  border-radius: 7px;
+  color: var(--cyan);
+  font-family: Orbitron, sans-serif;
+  font-size: 9px;
+  letter-spacing: 1px;
+}
+
+.video-info { padding: 17px; }
+
+.video-info h3 { font-size: 21px; margin-bottom: 5px; }
+.video-info p { color: var(--muted); font-size: 15px; }
+
+.video-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 17px;
+}
+
+.like-btn {
+  border: 1px solid var(--line);
+  border-radius: 9px;
+  background: rgba(0,90,180,.15);
+  color: #a8c9ed;
+  padding: 7px 11px;
+  cursor: pointer;
+}
+
+.like-btn.liked { color: #ff6bba; border-color: #ff6bba; }
+
+.open-video {
+  color: var(--cyan);
+  font-weight: 700;
+  font-size: 15px;
+}
+
+.empty-state {
+  grid-column: 1/-1;
+  padding: 45px 20px;
+  text-align: center;
+  color: var(--muted);
+  border: 1px dashed var(--line);
+  border-radius: 16px;
+}
+
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 18px;
+}
+
+.feature {
+  padding: 27px;
+  position: relative;
+  overflow: hidden;
+  transition: .3s;
+}
+
+.feature:hover { transform: translateY(-7px); border-color: rgba(0,220,255,.6); }
+
+.feature-icon {
+  width: 50px;
+  height: 50px;
+  display: grid;
+  place-items: center;
+  border-radius: 14px;
+  background: rgba(0,140,255,.15);
+  border: 1px solid rgba(0,220,255,.25);
+  font-size: 23px;
+  margin-bottom: 22px;
+  box-shadow: 0 0 25px rgba(0,120,255,.12);
+}
+
+.feature h3 { font-family: Orbitron, sans-serif; font-size: 15px; margin-bottom: 12px; }
+.feature p { color: var(--muted); line-height: 1.5; font-size: 17px; }
+
+.community {
+  padding: 65px 35px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.community::before {
+  content: "";
+  position: absolute;
+  width: 450px;
+  height: 450px;
+  border-radius: 50%;
+  background: rgba(0,140,255,.15);
+  filter: blur(90px);
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+}
+
+.community-content { position: relative; z-index: 1; }
+
+.community h2 {
+  font-family: Orbitron, sans-serif;
+  font-size: clamp(30px,5vw,55px);
+  margin-bottom: 17px;
+}
+
+.community p {
+  max-width: 620px;
+  margin: 0 auto 27px;
+  color: #a6c1df;
+  font-size: 19px;
+}
+
+.clock {
+  font-family: Orbitron, sans-serif;
+  font-size: 14px;
+  color: var(--cyan);
+  letter-spacing: 2px;
+  margin-top: 25px;
+}
+
+.footer {
+  width: min(1160px, calc(100% - 40px));
+  margin: auto;
+  padding: 30px 0 45px;
+  border-top: 1px solid var(--line);
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+  color: #7896b8;
+  font-size: 15px;
+}
+
+.footer strong { color: white; font-family: Orbitron, sans-serif; }
+.footer a { color: var(--cyan); }
+
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity .7s, transform .7s;
+}
+
+.reveal.visible { opacity: 1; transform: translateY(0); }
+
+.toast {
+  position: fixed;
+  z-index: 300;
+  bottom: 25px;
+  left: 50%;
+  transform: translate(-50%, 30px);
+  opacity: 0;
+  pointer-events: none;
+  background: rgba(0,30,65,.95);
+  border: 1px solid rgba(0,220,255,.4);
+  color: white;
+  border-radius: 12px;
+  padding: 13px 20px;
+  box-shadow: 0 0 35px rgba(0,150,255,.2);
+  transition: .3s;
+}
+
+.toast.show { opacity: 1; transform: translate(-50%,0); }
+
+.modal {
+  position: fixed;
+  inset: 0;
+  z-index: 250;
+  display: none;
+  place-items: center;
+  padding: 20px;
+  background: rgba(0,5,18,.8);
+  backdrop-filter: blur(12px);
+}
+
+.modal.open { display: grid; }
+
+.modal-box {
+  width: min(480px,100%);
+  padding: 27px;
+  position: relative;
+}
+
+.modal-box h3 { font-family: Orbitron, sans-serif; margin-bottom: 10px; }
+.modal-box p { color: var(--muted); margin-bottom: 20px; }
+
+.modal-box textarea {
+  width: 100%;
+  min-height: 110px;
+  resize: vertical;
+  padding: 13px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: #04132c;
+  color: white;
+  font: inherit;
+  outline: none;
+}
+
+.modal-box textarea:focus { border-color: var(--cyan); }
+
+.modal-close {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  background: transparent;
+  color: white;
+  border: 0;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.sound-label { font-size: 10px; }
+
+@media (max-width: 800px) {
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 65px;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    padding: 10px;
+    background: rgba(3,12,31,.97);
+    border: 1px solid var(--line);
+    border-radius: 15px;
+  }
+
+  .nav-links.open { display: flex; }
+  .nav-links a { padding: 13px; }
+  .menu-toggle { display: block; }
+  .video-grid { grid-template-columns: repeat(2,1fr); }
+  .feature-grid { grid-template-columns: repeat(2,1fr); }
+  .hero { min-height: 760px; }
+}
+
+@media (max-width: 560px) {
+  .video-grid, .feature-grid { grid-template-columns: 1fr; }
+  .hero h1 { letter-spacing: -2px; }
+  .hero p { font-size: 18px; }
+  .hero-stats { gap: 25px; }
+  .hero-orb { width: 330px; height: 330px; }
+  .community { padding: 45px 20px; }
+  .section { padding: 75px 0; }
+  .nav { top: 9px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    scroll-behavior: auto !important;
+    animation-duration: .01ms !important;
+    transition-duration: .01ms !important;
+  }
 }
 </style>
 </head>
 
 <body>
+<div id="progress"></div>
+<canvas id="particles"></canvas>
 
-<canvas id="space"></canvas>
-<div class="toast" id="toast"></div>
+<nav class="nav">
+  <a class="logo" href="#home">W1ETO<span>.</span></a>
 
-<header>
- <a href="#home" class="brand">W1ETO<span>.</span>company</a>
- <button class="menu" id="menu" aria-label="Menü öffnen">☰</button>
- <nav class="nav" id="nav">
-  <a href="#home">HOME</a>
-  <a href="#about">BRAND</a>
-  <a href="#videos">VIDEOS</a>
-  <a href="#community">COMMUNITY</a>
-  <a href="#discord" class="nav-join">JOIN DISCORD ↗</a>
- </nav>
+  <div class="nav-links" id="navLinks">
+    <a href="#home">HOME</a>
+    <a href="#videos">VIDEOS</a>
+    <a href="#features">FEATURES</a>
+    <a href="#community">COMMUNITY</a>
+  </div>
+
+  <div class="nav-actions">
+    <button class="icon-btn" id="soundBtn" title="Sound-Modus" aria-label="Sound-Modus">♫</button>
+    <button class="icon-btn menu-toggle" id="menuBtn" title="Menü" aria-label="Menü öffnen">☰</button>
+  </div>
+</nav>
+
+<header class="hero" id="home">
+  <div class="hero-orb"></div>
+
+  <div class="hero-content">
+    <div class="status">
+      <span class="status-dot"></span>
+      W1ETO SYSTEM ONLINE
+    </div>
+
+    <h1>
+      ENTER THE
+      <span class="blue">BLUE UNIVERSE</span>
+    </h1>
+
+    <p>
+      Willkommen bei W1ETO.company. Hier trifft Creator-Energy
+      auf eine Community, die keine Grenzen kennt.
+    </p>
+
+    <div class="hero-buttons">
+      <a class="btn btn-primary" href="#videos">▶ EXPLORE CONTENT</a>
+      <a class="btn btn-outline" href="https://discord.gg/Xy2KTmJUbR" target="_blank" rel="noopener noreferrer">✦ JOIN DISCORD</a>
+    </div>
+
+    <div class="hero-stats">
+      <div class="stat">
+        <strong>∞</strong>
+        <span>Energy</span>
+      </div>
+      <div class="stat">
+        <strong>24/7</strong>
+        <span>Creator Mode</span>
+      </div>
+      <div class="stat">
+        <strong>1 TEAM</strong>
+        <span>One Community</span>
+      </div>
+    </div>
+  </div>
 </header>
 
-<main>
-
-<section class="hero" id="home">
- <div class="hero-glow"></div>
- <div class="hero-content">
-  <div class="status"><span class="dot"></span> W1ETO SYSTEM ONLINE</div>
-  <h1>W1ETO<span class="gradient">.</span><br><span class="gradient">NEXUS X</span></h1>
-  <p>
-   THE FUTURE OF CONTENT.<br>
-   YOUR COMMUNITY. YOUR UNIVERSE.<br>
-   WELCOME TO THE NEXT LEVEL.
-  </p>
-  <div class="actions">
-   <a class="btn primary" href="#videos">▶ EXPLORE CONTENT</a>
-   <a class="btn discord-btn" href="https://discord.gg/Xy2KTmJUbR" target="_blank" rel="noopener">DISCORD ↗</a>
-   <a class="btn ghost" href="https://www.tiktok.com/@W1ETO.company" target="_blank" rel="noopener">TIKTOK ↗</a>
-  </div>
-  <div class="hero-foot">SCROLL TO ENTER THE UNIVERSE ↓</div>
- </div>
-</section>
-
 <div class="ticker">
- <div class="ticker-track">
-  <span>W1ETO COMPANY ✦ CREATE ✦ CONNECT ✦ DISCOVER ✦ NEXUS X ✦ BLUE CORE ✦</span>
-  <span>W1ETO COMPANY ✦ CREATE ✦ CONNECT ✦ DISCOVER ✦ NEXUS X ✦ BLUE CORE ✦</span>
- </div>
+  <div class="ticker-track">
+    <span>W1ETO <b>✦</b> BLUE ENERGY</span>
+    <span>CREATE <b>✦</b> CONNECT</span>
+    <span>NO LIMITS <b>✦</b> JUST VIBES</span>
+    <span>W1ETO <b>✦</b> BLUE ENERGY</span>
+    <span>CREATE <b>✦</b> CONNECT</span>
+    <span>NO LIMITS <b>✦</b> JUST VIBES</span>
+  </div>
 </div>
 
-<section id="about" class="reveal">
- <div class="heading">
-  <small>01 / THE BRAND</small>
-  <h2>MORE THAN A NAME.</h2>
-  <p>Ein Creator. Eine Marke. Eine Community. Ein ganzes Universum.</p>
- </div>
- <div class="glass about-box">
-  <h3>WELCOME TO W1ETO.company</h3>
-  <p>
-   Hier findest du alles rund um W1ETO.company.
-   Entdecke unsere Inhalte, besuche unsere Social-Media-Kanäle
-   und werde Teil unserer Community.
-   Das ist unser digitaler Treffpunkt.
-  </p>
-  <div class="stats">
-   <div class="stat"><strong>∞</strong><span>CREATIVITY</span></div>
-   <div class="stat"><strong>24/7</strong><span>COMMUNITY</span></div>
-   <div class="stat"><strong>100%</strong><span>W1ETO</span></div>
-  </div>
- </div>
-</section>
+<main>
+  <section class="section reveal" id="videos">
+    <div class="section-head">
+      <div class="eyebrow">01 // CONTENT ZONE</div>
+      <h2>THE <span>VIDEO</span> VAULT</h2>
+      <p class="section-desc">Finde deinen nächsten Lieblingsclip aus dem W1ETO-Universum.</p>
+    </div>
 
-<section class="video-section reveal" id="videos">
- <div class="heading">
-  <small>02 / CONTENT CENTER</small>
-  <h2>VIDEO UNIVERSE.</h2>
-  <p>Finde deine Lieblingsinhalte. Entdecke neue Videos und besuche den Creator.</p>
- </div>
+    <div class="video-toolbar">
+      <div class="search-wrap">
+        <span class="search-icon">⌕</span>
+        <input id="videoSearch" type="search" placeholder="Videos durchsuchen..." aria-label="Videos durchsuchen">
+      </div>
 
- <div class="toolbar">
-  <input class="search" id="search" placeholder="⌕  Videos durchsuchen..." aria-label="Videos durchsuchen">
-  <div class="filters">
-   <button class="filter active" data-filter="all">ALL</button>
-   <button class="filter" data-filter="new">NEW</button>
-   <button class="filter" data-filter="popular">POPULAR</button>
-  </div>
- </div>
+      <div class="filters">
+        <button class="filter active" data-filter="all">ALL</button>
+        <button class="filter" data-filter="gaming">GAMING</button>
+        <button class="filter" data-filter="fun">FUN</button>
+        <button class="filter" data-filter="other">OTHER</button>
+      </div>
+    </div>
 
- <div class="video-grid" id="videoGrid"></div>
+    <div class="video-grid" id="videoGrid"></div>
+  </section>
 
- <p class="note">
-  Hinweis: Trage deine echten TikTok-Video-Links im VIDEO_DATA-Array
-  im Script ein. Ohne Videolinks kann die Seite keine Videos automatisch
-  aus TikTok laden. Das Creator-Profil findest du
-  <a href="https://www.tiktok.com/@W1ETO.company" target="_blank" rel="noopener">hier ↗</a>.
- </p>
-</section>
+  <section class="section reveal" id="features">
+    <div class="section-head">
+      <div class="eyebrow">02 // SYSTEM FEATURES</div>
+      <h2>MORE THAN <span>A WEBSITE</span></h2>
+      <p class="section-desc">Das W1ETO-Universum. Ein Platz für Content, Community und neue Ideen.</p>
+    </div>
 
-<section class="reveal" id="community">
- <div class="heading">
-  <small>03 / COMMUNITY HUB</small>
-  <h2>YOUR VOICE. YOUR SPACE.</h2>
-  <p>Schreib eine Nachricht und werde Teil der W1ETO-Community.</p>
- </div>
- <div class="glass community">
-  <h3>✦ COMMUNITY WALL</h3>
-  <p>Teile deine Gedanken mit anderen Besuchern.</p>
-  <form class="comment-form" id="commentForm">
-   <input class="field" id="name" maxlength="30" placeholder="Dein Name" required>
-   <textarea class="field" id="message" maxlength="500" placeholder="Deine Nachricht..." required></textarea>
-   <button class="post" type="submit">SEND MESSAGE ↗</button>
-  </form>
-  <div class="comments" id="comments"></div>
- </div>
-</section>
+    <div class="feature-grid">
+      <article class="feature panel">
+        <div class="feature-icon">⚡</div>
+        <h3>ENERGY MODE</h3>
+        <p>Ein elektrisches Design mit Neon-Glow, Lichtanimationen und futuristischen Details.</p>
+      </article>
 
-<section class="discord-area reveal" id="discord">
- <div class="discord-card">
-  <div class="discord-symbol">◈</div>
-  <div class="heading">
-   <small>04 / OFFICIAL COMMUNITY</small>
-   <h2>ENTER THE BLUE ZONE.</h2>
-   <p>
-    Der nächste Schritt beginnt auf Discord.
-    Triff die Community, tausche dich aus und werde Teil von W1ETO.company.
-   </p>
-  </div>
-  <a class="discord-link" href="https://discord.gg/Xy2KTmJUbR" target="_blank" rel="noopener">
-   JOIN THE DISCORD SERVER ↗
-  </a>
- </div>
-</section>
+      <article class="feature panel">
+        <div class="feature-icon">🎬</div>
+        <h3>VIDEO VAULT</h3>
+        <p>Eine übersichtliche Content-Zone mit Suche, Kategorien und direkten Video-Links.</p>
+      </article>
 
-<section class="reveal" id="social">
- <div class="heading">
-  <small>05 / FOLLOW THE JOURNEY</small>
-  <h2>STAY CONNECTED.</h2>
-  <p>Verpasse keine neuen Inhalte von W1ETO.company.</p>
- </div>
- <div class="actions">
-  <a class="btn primary" href="https://www.tiktok.com/@W1ETO.company" target="_blank" rel="noopener">♫ FOLLOW ON TIKTOK</a>
-  <a class="btn discord-btn" href="https://discord.gg/Xy2KTmJUbR" target="_blank" rel="noopener">JOIN DISCORD</a>
- </div>
-</section>
+      <article class="feature panel">
+        <div class="feature-icon">🌌</div>
+        <h3>BLUE UNIVERSE</h3>
+        <p>Ein eigener Look mit Partikeln, bewegtem Grid und dynamischen Lichteffekten.</p>
+      </article>
 
+      <article class="feature panel">
+        <div class="feature-icon">💎</div>
+        <h3>COMMUNITY HUB</h3>
+        <p>Ein direkter Zugang zur W1ETO-Community auf Discord.</p>
+      </article>
+
+      <article class="feature panel">
+        <div class="feature-icon">🔊</div>
+        <h3>SOUND MODE</h3>
+        <p>Schalte optionale elektronische UI-Sounds ein und aus.</p>
+      </article>
+
+      <article class="feature panel">
+        <div class="feature-icon">📱</div>
+        <h3>EVERY DEVICE</h3>
+        <p>Optimiert für Smartphones, Tablets und große Bildschirme.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="section reveal" id="community">
+    <div class="community panel">
+      <div class="community-content">
+        <div class="eyebrow">03 // JOIN THE MOVEMENT</div>
+        <h2>YOUR CREW IS <span style="color:var(--cyan)">WAITING.</span></h2>
+        <p>
+          Werde Teil der Community, tausche dich aus und bleib bei
+          W1ETO.company auf dem neuesten Stand.
+        </p>
+
+        <div class="hero-buttons">
+          <a class="btn btn-primary" href="https://discord.gg/Xy2KTmJUbR" target="_blank" rel="noopener noreferrer">✦ JOIN DISCORD</a>
+          <a class="btn btn-outline" href="https://www.tiktok.com/@W1ETO.company" target="_blank" rel="noopener noreferrer">↗ FOLLOW ON TIKTOK</a>
+        </div>
+
+        <div class="clock" id="clock">SYSTEM TIME // --:--:--</div>
+      </div>
+    </div>
+  </section>
 </main>
 
 <footer class="footer">
- <strong>W1ETO.company — NEXUS X</strong><br>
- CREATE YOUR WORLD. BUILD YOUR LEGACY.<br>
- <a href="#home">BACK TO TOP ↑</a><br><br>
- © 2026 W1ETO.company · ALL RIGHTS RESERVED
+  <div><strong>W1ETO<span style="color:var(--cyan)">.</span>COMPANY</strong><br>ENTER THE BLUE UNIVERSE.</div>
+  <div>© <span id="year"></span> W1ETO.company · ALL SYSTEMS ONLINE</div>
+  <div><a href="https://www.tiktok.com/@W1ETO.company" target="_blank" rel="noopener noreferrer">TIKTOK</a> · <a href="https://discord.gg/Xy2KTmJUbR" target="_blank" rel="noopener noreferrer">DISCORD</a></div>
 </footer>
 
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<div class="modal" id="commentModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+  <div class="modal-box panel">
+    <button class="modal-close" id="closeModal" aria-label="Schließen">×</button>
+    <h3 id="modalTitle">YOUR MESSAGE</h3>
+    <p>Dein Kommentar wird nur lokal in diesem Browser gespeichert.</p>
+    <textarea id="commentText" maxlength="300" placeholder="Schreib etwas..."></textarea>
+    <br><br>
+    <button class="btn btn-primary" id="saveComment">SAVE MESSAGE</button>
+  </div>
+</div>
+
 <script>
-// ===========================================
-// 1. VIDEO-DATEN
-// Füge echte TikTok-Links hier hinzu.
-// ===========================================
+/* ==========================================
+   W1ETO VIDEO DATA
+   Füge hier deine eigenen TikTok-Links ein.
+   ========================================== */
 
 const VIDEO_DATA = [
- // Beispiel:
- // {title:"Mein Video",url:"https://www.tiktok.com/@W1ETO.company/video/123456789",category:"new"}
+  // Beispiel:
+  // {
+  //   title: "Mein neuer Clip",
+  //   description: "Ein kleiner Einblick in meinen Content.",
+  //   category: "gaming",
+  //   url: "https://www.tiktok.com/@W1ETO.company/video/DEINE_VIDEO_ID"
+  // }
 ];
 
-// ===========================================
-// 2. VIDEO-GALERIE
-// ===========================================
+const grid = document.getElementById("videoGrid");
+const search = document.getElementById("videoSearch");
+let activeFilter = "all";
+let selectedVideo = null;
 
-const grid=document.getElementById("videoGrid");
-const search=document.getElementById("search");
-let currentFilter="all";
-
-function showToast(text){
- const toast=document.getElementById("toast");
- toast.textContent=text;
- toast.classList.add("show");
- clearTimeout(showToast.timer);
- showToast.timer=setTimeout(()=>toast.classList.remove("show"),2300);
+function showToast(message) {
+  const toast = document.getElementById("toast");
+  toast.textContent = message;
+  toast.classList.add("show");
+  clearTimeout(showToast.timer);
+  showToast.timer = setTimeout(() => toast.classList.remove("show"), 2600);
 }
 
-function renderVideos(){
- grid.replaceChildren();
- const query=search.value.toLowerCase();
-
- const list=VIDEO_DATA.filter(v=>{
-  const matches=(v.title||"").toLowerCase().includes(query);
-  const category=currentFilter==="all"||
-   (currentFilter==="popular"&&v.category==="popular")||
-   (currentFilter==="new"&&v.category==="new");
-  return matches&&category;
- });
-
- if(!list.length){
-  const empty=document.createElement("div");
-  empty.className="empty";
-  empty.textContent=VIDEO_DATA.length
-   ?"Keine passenden Videos gefunden."
-   :"Noch keine Videos eingetragen. Deine echten TikTok-Links kannst du oben in VIDEO_DATA ergänzen.";
-  grid.append(empty);
-  return;
- }
-
- list.forEach((video,index)=>{
-  const card=document.createElement("article");
-  card.className="video-card";
-
-  const thumb=document.createElement("div");
-  thumb.className="video-thumb";
-
-  const tag=document.createElement("span");
-  tag.className="video-tag";
-  tag.textContent=video.category==="popular"?"POPULAR":"W1ETO VIDEO";
-
-  const play=document.createElement("span");
-  play.className="play";
-  play.textContent="▶";
-
-  thumb.append(tag,play);
-
-  const body=document.createElement("div");
-  body.className="video-body";
-
-  const title=document.createElement("h3");
-  title.textContent=video.title||"W1ETO Video";
-
-  const description=document.createElement("p");
-  description.textContent="Official W1ETO.company content";
-
-  const bottom=document.createElement("div");
-  bottom.className="video-bottom";
-
-  const like=document.createElement("button");
-  like.className="like";
-
-  const key="w1eto_nexus_like_"+index;
-  let liked=localStorage.getItem(key)==="true";
-
-  function update(){
-   like.textContent=liked?"♥ LIKED":"♡ LIKE";
-   like.classList.toggle("active",liked);
+function safeGet(key, fallback) {
+  try {
+    const value = localStorage.getItem(key);
+    return value ? JSON.parse(value) : fallback;
+  } catch {
+    return fallback;
   }
-  update();
+}
 
-  like.addEventListener("click",()=>{
-   liked=!liked;
-   localStorage.setItem(key,String(liked));
-   update();
-   showToast(liked?"Video geliked!":"Like entfernt");
+function safeSet(key, value) {
+  try {
+    localStorage.setItem(key, JSON.stringify(value));
+  } catch {
+    showToast("Speichern ist in diesem Browser nicht verfügbar.");
+  }
+}
+
+function renderVideos() {
+  const query = search.value.toLowerCase().trim();
+
+  const filtered = VIDEO_DATA.filter(video => {
+    const matchesCategory = activeFilter === "all" || video.category === activeFilter;
+    const matchesSearch = (video.title + " " + video.description).toLowerCase().includes(query);
+    return matchesCategory && matchesSearch;
   });
 
-  const watch=document.createElement("a");
-  watch.className="watch";
-  watch.href=video.url;
-  watch.target="_blank";
-  watch.rel="noopener";
-  watch.textContent="WATCH ↗";
+  grid.innerHTML = "";
 
-  bottom.append(like,watch);
-  body.append(title,description,bottom);
-  card.append(thumb,body);
-  grid.append(card);
- });
+  if (!filtered.length) {
+    const message = VIDEO_DATA.length
+      ? "Keine passenden Videos gefunden."
+      : "Deine Video-Vault ist bereit. Füge deine TikTok-Links im VIDEO_DATA-Bereich des Codes ein.";
+    grid.innerHTML = `<div class="empty-state"><div style="font-size:35px;margin-bottom:12px">✧</div>${message}</div>`;
+    return;
+  }
+
+  filtered.forEach((video, index) => {
+    const videoKey = "w1eto-like-" + index;
+    const liked = safeGet(videoKey, false);
+    const card = document.createElement("article");
+    card.className = "video-card";
+
+    const cover = document.createElement("div");
+    cover.className = "video-cover";
+    cover.innerHTML = `<span class="video-tag">${String(video.category || "other").toUpperCase()}</span><div class="play">▶</div>`;
+
+    const info = document.createElement("div");
+    info.className = "video-info";
+
+    const title = document.createElement("h3");
+    title.textContent = video.title;
+
+    const description = document.createElement("p");
+    description.textContent = video.description || "W1ETO Creator Content";
+
+    const actions = document.createElement("div");
+    actions.className = "video-actions";
+
+    const like = document.createElement("button");
+    like.className = "like-btn" + (liked ? " liked" : "");
+    like.textContent = liked ? "♥ LIKED" : "♡ LIKE";
+    like.addEventListener("click", () => {
+      const next = !safeGet(videoKey, false);
+      safeSet(videoKey, next);
+      renderVideos();
+      showToast(next ? "Clip lokal geliked ♥" : "Like entfernt");
+    });
+
+    const open = document.createElement("a");
+    open.className = "open-video";
+    open.textContent = "WATCH ↗";
+    open.href = video.url;
+    open.target = "_blank";
+    open.rel = "noopener noreferrer";
+
+    actions.append(like, open);
+    info.append(title, description, actions);
+    card.append(cover, info);
+    grid.append(card);
+  });
 }
 
-search.addEventListener("input",renderVideos);
+search.addEventListener("input", renderVideos);
 
-document.querySelectorAll(".filter").forEach(button=>{
- button.addEventListener("click",()=>{
-  document.querySelectorAll(".filter").forEach(b=>b.classList.remove("active"));
-  button.classList.add("active");
-  currentFilter=button.dataset.filter;
-  renderVideos();
- });
+document.querySelectorAll(".filter").forEach(button => {
+  button.addEventListener("click", () => {
+    document.querySelectorAll(".filter").forEach(item => item.classList.remove("active"));
+    button.classList.add("active");
+    activeFilter = button.dataset.filter;
+    renderVideos();
+  });
 });
 
 renderVideos();
 
-// ===========================================
-// 3. KOMMENTARE - LOKALE DEMO
-// ===========================================
-
-let comments=[];
-try{
- comments=JSON.parse(localStorage.getItem("w1eto_nexus_comments")||"[]");
- if(!Array.isArray(comments))comments=[];
-}catch{comments=[]}
-
-const commentBox=document.getElementById("comments");
-
-function renderComments(){
- commentBox.replaceChildren();
-
- if(!comments.length){
-  const empty=document.createElement("p");
-  empty.textContent="Noch keine Nachrichten. Sei der Erste!";
-  empty.style.color="#8da5c9";
-  commentBox.append(empty);
-  return;
- }
-
- comments.slice(-30).reverse().forEach(c=>{
-  const item=document.createElement("article");
-  item.className="comment";
-
-  const name=document.createElement("strong");
-  name.textContent=c.name;
-
-  const message=document.createElement("p");
-  message.textContent=c.message;
-
-  const date=document.createElement("small");
-  date.textContent=c.date;
-
-  item.append(name,message,date);
-  commentBox.append(item);
- });
-}
-
-document.getElementById("commentForm").addEventListener("submit",e=>{
- e.preventDefault();
-
- const name=document.getElementById("name").value.trim();
- const message=document.getElementById("message").value.trim();
-
- if(!name||!message)return;
-
- comments.push({
-  name,
-  message,
-  date:new Date().toLocaleString("de-DE")
- });
-
- try{
-  localStorage.setItem("w1eto_nexus_comments",JSON.stringify(comments));
- }catch{
-  comments.pop();
-  showToast("Speichern nicht möglich.");
-  return;
- }
-
- e.target.reset();
- renderComments();
- showToast("Nachricht gespeichert!");
+/* Mobile navigation */
+document.getElementById("menuBtn").addEventListener("click", () => {
+  document.getElementById("navLinks").classList.toggle("open");
 });
 
-renderComments();
-
-// ===========================================
-// 4. MOBILE NAVIGATION
-// ===========================================
-
-const menu=document.getElementById("menu");
-const nav=document.getElementById("nav");
-
-menu.addEventListener("click",()=>nav.classList.toggle("open"));
-nav.querySelectorAll("a").forEach(a=>{
- a.addEventListener("click",()=>nav.classList.remove("open"));
+document.querySelectorAll(".nav-links a").forEach(link => {
+  link.addEventListener("click", () => document.getElementById("navLinks").classList.remove("open"));
 });
 
-// ===========================================
-// 5. SCROLL ANIMATIONS
-// ===========================================
+/* Scroll progress */
+window.addEventListener("scroll", () => {
+  const max = document.documentElement.scrollHeight - window.innerHeight;
+  const progress = max > 0 ? window.scrollY / max * 100 : 0;
+  document.getElementById("progress").style.width = progress + "%";
+});
 
-const observer=new IntersectionObserver(entries=>{
- entries.forEach(entry=>{
-  if(entry.isIntersecting){
-   entry.target.classList.add("visible");
-   observer.unobserve(entry.target);
-  }
- });
-},{threshold:.1});
-
-document.querySelectorAll(".reveal").forEach(el=>observer.observe(el));
-
-// ===========================================
-// 6. ANIMIERTE PARTIKEL
-// ===========================================
-
-const canvas=document.getElementById("space");
-const ctx=canvas.getContext("2d");
-let particles=[];
-
-function resize(){
- const dpr=Math.min(devicePixelRatio||1,2);
- canvas.width=innerWidth*dpr;
- canvas.height=innerHeight*dpr;
- ctx.setTransform(dpr,0,0,dpr,0,0);
-
- const amount=Math.min(90,Math.floor(innerWidth/13));
- particles=Array.from({length:amount},()=>({
-  x:Math.random()*innerWidth,
-  y:Math.random()*innerHeight,
-  r:Math.random()*1.5+.4,
-  speed:Math.random()*.35+.1
- }));
-}
-
-let frame=0;
-function animate(){
- frame++;
- if(frame%2===0){
-  ctx.clearRect(0,0,innerWidth,innerHeight);
-  particles.forEach(p=>{
-   p.y-=p.speed;
-   if(p.y<0){p.y=innerHeight;p.x=Math.random()*innerWidth}
-
-   ctx.beginPath();
-   ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
-   ctx.fillStyle="#58caff";
-   ctx.shadowBlur=12;
-   ctx.shadowColor="#168cff";
-   ctx.fill();
+/* Reveal animations */
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("visible");
+      observer.unobserve(entry.target);
+    }
   });
- }
- requestAnimationFrame(animate);
+}, { threshold: 0.12 });
+
+document.querySelectorAll(".reveal").forEach(el => observer.observe(el));
+
+/* Live clock */
+function updateClock() {
+  const now = new Date();
+  document.getElementById("clock").textContent =
+    "SYSTEM TIME // " + now.toLocaleTimeString("de-DE");
+}
+updateClock();
+setInterval(updateClock, 1000);
+document.getElementById("year").textContent = new Date().getFullYear();
+
+/* Optional sound mode using Web Audio */
+let audioContext = null;
+let soundEnabled = false;
+
+function playTone(frequency = 520, duration = .07) {
+  if (!soundEnabled) return;
+  try {
+    audioContext ||= new (window.AudioContext || window.webkitAudioContext)();
+    if (audioContext.state === "suspended") audioContext.resume();
+    const oscillator = audioContext.createOscillator();
+    const gain = audioContext.createGain();
+    oscillator.type = "sine";
+    oscillator.frequency.value = frequency;
+    gain.gain.setValueAtTime(.035, audioContext.currentTime);
+    gain.gain.exponentialRampToValueAtTime(.001, audioContext.currentTime + duration);
+    oscillator.connect(gain);
+    gain.connect(audioContext.destination);
+    oscillator.start();
+    oscillator.stop(audioContext.currentTime + duration);
+  } catch {}
 }
 
-resize();
-window.addEventListener("resize",resize);
-if(!matchMedia("(prefers-reduced-motion: reduce)").matches)animate();
-</script>
+const soundBtn = document.getElementById("soundBtn");
+soundBtn.addEventListener("click", () => {
+  soundEnabled = !soundEnabled;
+  soundBtn.textContent = soundEnabled ? "♫ ON" : "♫";
+  showToast(soundEnabled ? "Sound Mode aktiviert" : "Sound Mode deaktiviert");
+  playTone(700, .12);
+});
 
+document.querySelectorAll("button, .btn, .video-card a").forEach(el => {
+  el.addEventListener("mouseenter", () => playTone(420, .035));
+});
+
+/* Floating particles */
+const canvas = document.getElementById("particles");
+const ctx = canvas.getContext("2d");
+let particles = [];
+let width = 0;
+let height = 0;
+
+function resizeCanvas() {
+  const ratio = Math.min(window.devicePixelRatio || 1, 2);
+  width = window.innerWidth;
+  height = window.innerHeight;
+  canvas.width = width * ratio;
+  canvas.height = height * ratio;
+  ctx.setTransform(ratio, 0, 0, ratio, 0, 0);
+
+  const amount = Math.min(100, Math.floor(width / 13));
+  particles = Array.from({ length: amount }, () => ({
+    x: Math.random() * width,
+    y: Math.random() * height,
+    size: Math.random() * 1.8 + .4,
+    speed: Math.random() * .35 + .08,
+    alpha: Math.random() * .65 + .15
+  }));
+}
+
+function animateParticles() {
+  ctx.clearRect(0, 0, width, height);
+
+  particles.forEach(p => {
+    p.y -= p.speed;
+    if (p.y < -5) {
+      p.y = height + 5;
+      p.x = Math.random() * width;
+    }
+
+    ctx.beginPath();
+    ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+    ctx.fillStyle = `rgba(65,190,255,${p.alpha})`;
+    ctx.shadowBlur = 12;
+    ctx.shadowColor = "#008cff";
+    ctx.fill();
+  });
+
+  requestAnimationFrame(animateParticles);
+}
+
+window.addEventListener("resize", resizeCanvas);
+resizeCanvas();
+animateParticles();
+
+/* Subtle card tilt on desktop */
+if (window.matchMedia("(hover: hover) and (pointer: fine)").matches) {
+  document.addEventListener("pointermove", event => {
+    const card = event.target.closest(".video-card");
+    if (!card) return;
+
+    const rect = card.getBoundingClientRect();
+    const x = (event.clientX - rect.left) / rect.width - .5;
+    const y = (event.clientY - rect.top) / rect.height - .5;
+    card.style.transform = `perspective(700px) rotateY(${x * 5}deg) rotateX(${-y * 5}deg) translateY(-5px)`;
+  });
+
+  document.addEventListener("pointerout", event => {
+    const card = event.target.closest(".video-card");
+    if (card && !card.contains(event.relatedTarget)) card.style.transform = "";
+  });
+}
+
+/* Keyboard shortcut: "/" focuses video search */
+document.addEventListener("keydown", event => {
+  if (event.key === "/" && !["INPUT", "TEXTAREA"].includes(document.activeElement.tagName)) {
+    event.preventDefault();
+    document.getElementById("videoSearch").focus();
+    document.getElementById("videos").scrollIntoView({ behavior: "smooth" });
+  }
+});
+</script>
 </body>
 </html>

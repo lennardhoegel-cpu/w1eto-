@@ -2,822 +2,779 @@
 <html lang="de">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#030817">
-<meta name="description" content="W1ETO.company – The Ultimate Creator Experience">
-<title>W1ETO.company | Ultra Max Pro Max</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#050916">
+<meta name="description" content="W1ETO.company — Official Creator Universe">
+<title>W1ETO.company | NEXUS X</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 
 <style>
 :root {
-  --bg:#030817;
-  --panel:#09152b;
-  --blue:#167cff;
-  --cyan:#00eaff;
-  --purple:#7055ff;
-  --text:#f4f9ff;
-  --muted:#8ba5c9;
-  --border:#168cff35;
+ --bg:#050916;
+ --panel:#0a1428;
+ --panel2:#0d1d38;
+ --blue:#167cff;
+ --cyan:#00eaff;
+ --purple:#8065ff;
+ --text:#f5f9ff;
+ --muted:#8da5c9;
+ --line:#4a9eff30;
 }
-
-*{margin:0;padding:0;box-sizing:border-box}
+*{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
 body{
-  background:var(--bg);
-  color:var(--text);
-  font-family:Inter,Arial,sans-serif;
-  overflow-x:hidden;
+ background:var(--bg);
+ color:var(--text);
+ font-family:Inter,Arial,sans-serif;
+ overflow-x:hidden;
 }
-a{text-decoration:none;color:inherit}
+a{color:inherit;text-decoration:none}
 button,input,textarea{font:inherit}
-
-#particles{
-  position:fixed;
-  inset:0;
-  width:100%;
-  height:100%;
-  pointer-events:none;
-  z-index:-1;
+button{cursor:pointer}
+#space{
+ position:fixed;inset:0;width:100%;height:100%;
+ z-index:-1;pointer-events:none;
 }
-
 body:before{
-  content:"";
-  position:fixed;
-  inset:0;
-  z-index:-2;
-  background:
-    radial-gradient(circle at 10% 10%,#0759bb44,transparent 35%),
-    radial-gradient(circle at 90% 50%,#1638a544,transparent 40%),
-    radial-gradient(circle at 50% 100%,#005eff22,transparent 45%);
+ content:"";position:fixed;inset:0;z-index:-2;
+ background:
+ radial-gradient(ellipse at 15% 10%,#0757b444,transparent 40%),
+ radial-gradient(ellipse at 90% 55%,#2633a333,transparent 40%),
+ linear-gradient(180deg,#050916,#071127);
 }
-
+body:after{
+ content:"";position:fixed;inset:0;z-index:-1;
+ pointer-events:none;opacity:.13;
+ background-image:radial-gradient(#72c9ff 1px,transparent 1px);
+ background-size:35px 35px;
+}
 header{
-  position:fixed;
-  top:0;
-  width:100%;
-  z-index:100;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  padding:20px 7%;
-  background:#030817d9;
-  backdrop-filter:blur(20px);
-  border-bottom:1px solid var(--border);
+ position:fixed;top:0;left:0;width:100%;z-index:100;
+ height:76px;padding:0 6%;
+ display:flex;align-items:center;justify-content:space-between;
+ background:#050916d9;backdrop-filter:blur(22px);
+ border-bottom:1px solid var(--line);
 }
-
-.logo{
-  font-weight:900;
-  font-size:23px;
-  letter-spacing:-1px;
+.brand{font-size:22px;font-weight:900;letter-spacing:-1px}
+.brand span{color:var(--cyan);text-shadow:0 0 20px var(--cyan)}
+.nav{display:flex;align-items:center;gap:27px}
+.nav a{font-size:11px;font-weight:800;color:#b9c9e5;transition:.2s}
+.nav a:hover{color:var(--cyan)}
+.nav .nav-join{
+ padding:11px 17px;border:1px solid #168cff77;
+ border-radius:8px;color:var(--cyan);
 }
-.logo span{color:var(--cyan);text-shadow:0 0 20px var(--cyan)}
-
-nav{display:flex;gap:25px}
-nav a{
-  font-size:11px;
-  font-weight:800;
-  color:#b6c8e5;
-  transition:.3s;
+.menu{
+ display:none;background:none;color:white;
+ border:1px solid var(--line);padding:9px 12px;border-radius:8px;
 }
-nav a:hover{color:var(--cyan)}
-
-.menu-toggle{
-  display:none;
-  background:none;
-  color:white;
-  border:1px solid var(--border);
-  border-radius:8px;
-  padding:8px 12px;
-  cursor:pointer;
-}
-
 .hero{
-  min-height:100vh;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  text-align:center;
-  padding:130px 20px 80px;
-  position:relative;
-  overflow:hidden;
+ min-height:100vh;display:grid;place-items:center;
+ text-align:center;padding:140px 20px 90px;position:relative;
+ overflow:hidden;
 }
-
-.hero:before{
-  content:"";
-  position:absolute;
-  width:500px;
-  height:500px;
-  border-radius:50%;
-  background:#007bff;
-  filter:blur(170px);
-  opacity:.18;
-  animation:orb 8s infinite alternate ease-in-out;
+.hero-glow{
+ position:absolute;width:500px;height:500px;border-radius:50%;
+ background:#007bff;filter:blur(160px);opacity:.2;
+ animation:float 8s ease-in-out infinite alternate;
 }
-
-@keyframes orb{
-  from{transform:translate(-100px,-50px)}
-  to{transform:translate(100px,70px)}
+@keyframes float{
+ to{transform:translate(100px,50px) scale(1.3)}
 }
-
 .hero-content{position:relative;z-index:2}
-
-.eyebrow{
-  display:inline-block;
-  padding:11px 20px;
-  border:1px solid #00eaff66;
-  border-radius:50px;
-  color:var(--cyan);
-  font-size:10px;
-  font-weight:900;
-  letter-spacing:4px;
-  background:#00eaff0b;
-  box-shadow:0 0 30px #00eaff22;
-  margin-bottom:35px;
+.status{
+ display:inline-flex;align-items:center;gap:10px;
+ padding:10px 17px;border:1px solid #00eaff55;
+ border-radius:50px;background:#00eaff0c;
+ color:var(--cyan);font-size:10px;font-weight:900;
+ letter-spacing:3px;
 }
-
+.dot{
+ width:7px;height:7px;background:#00eaff;border-radius:50%;
+ box-shadow:0 0 15px #00eaff;
+}
 .hero h1{
-  font-size:clamp(55px,11vw,130px);
-  line-height:.91;
-  letter-spacing:-8px;
-  font-weight:900;
+ font-size:clamp(60px,12vw,145px);
+ font-weight:900;line-height:.88;letter-spacing:-9px;
+ margin:38px 0 28px;
 }
-
 .gradient{
-  background:linear-gradient(100deg,#fff,#00eaff,#168cff,#a6caff);
-  color:transparent;
-  background-clip:text;
-  -webkit-background-clip:text;
-  background-size:250%;
-  animation:gradient 6s linear infinite;
+ background:linear-gradient(100deg,#fff,#00eaff,#168cff,#a58cff);
+ background-size:250%;background-clip:text;
+ -webkit-background-clip:text;color:transparent;
+ animation:shine 6s linear infinite;
 }
-
-@keyframes gradient{
-  to{background-position:250% center}
-}
-
+@keyframes shine{to{background-position:250%}}
 .hero p{
-  color:var(--muted);
-  font-size:16px;
-  line-height:1.9;
-  margin:30px auto;
+ color:var(--muted);font-size:15px;line-height:1.9;
+ margin-bottom:32px;
 }
-
-.actions{
-  display:flex;
-  flex-wrap:wrap;
-  justify-content:center;
-  gap:14px;
-}
-
+.actions{display:flex;justify-content:center;flex-wrap:wrap;gap:13px}
 .btn{
-  padding:17px 27px;
-  display:inline-flex;
-  justify-content:center;
-  align-items:center;
-  gap:9px;
-  border-radius:10px;
-  border:1px solid #ffffff22;
-  font-size:11px;
-  font-weight:900;
-  transition:.3s;
-  cursor:pointer;
+ display:inline-flex;align-items:center;justify-content:center;gap:9px;
+ padding:16px 23px;border-radius:9px;
+ font-size:11px;font-weight:900;
+ border:1px solid #ffffff25;transition:.25s;
 }
+.btn:hover{transform:translateY(-5px);box-shadow:0 0 30px #168cff55}
+.primary{background:linear-gradient(110deg,#167cff,#00dfff);color:#001123}
+.discord-btn{background:#5865f2;border-color:#8b99ff}
+.ghost{background:#ffffff08}
+.hero-foot{
+ margin-top:80px;color:#647d9f;font-size:10px;letter-spacing:4px;
+ animation:bob 2s infinite;
+}
+@keyframes bob{50%{transform:translateY(7px)}}
 
-.btn:hover{
-  transform:translateY(-5px);
-  box-shadow:0 0 30px #168cff66;
+.ticker{
+ overflow:hidden;border-top:1px solid var(--line);
+ border-bottom:1px solid var(--line);background:#0b1a32;
+ padding:16px 0;white-space:nowrap;
 }
+.ticker-track{
+ display:inline-flex;gap:45px;
+ animation:marquee 30s linear infinite;
+ color:#8ab8ed;font-size:11px;font-weight:900;letter-spacing:4px;
+}
+@keyframes marquee{to{transform:translateX(-50%)}}
 
-.primary{
-  color:#001023;
-  background:linear-gradient(110deg,#168cff,#00eaff);
-  box-shadow:0 0 30px #168cff44;
+section{padding:105px 7%;scroll-margin-top:85px}
+.heading{text-align:center;margin-bottom:48px}
+.heading small{
+ color:var(--cyan);font-size:10px;font-weight:900;letter-spacing:5px;
 }
-.secondary{background:#ffffff0b}
-.discord-btn{background:#5865f2;border-color:#8790ff}
-
-.scroll{
-  margin-top:65px;
-  color:#7799c4;
-  font-size:10px;
-  letter-spacing:4px;
-  animation:bounce 2s infinite;
+.heading h2{
+ font-size:clamp(34px,5vw,58px);font-weight:900;
+ letter-spacing:-2px;margin-top:14px;
 }
-@keyframes bounce{
-  50%{transform:translateY(8px)}
+.heading p{
+ color:var(--muted);max-width:650px;margin:15px auto 0;
+ line-height:1.8;font-size:14px;
 }
-
-section{
-  padding:105px 7%;
-  scroll-margin-top:80px;
+.glass{
+ background:linear-gradient(145deg,#102445dd,#081226ee);
+ border:1px solid var(--line);border-radius:20px;
+ box-shadow:0 20px 70px #0006, inset 0 1px #ffffff0a;
 }
-
-.section-head{text-align:center;margin-bottom:50px}
-.section-head small{
-  color:var(--cyan);
-  font-size:10px;
-  font-weight:900;
-  letter-spacing:5px;
+.about-box{
+ max-width:1000px;margin:auto;padding:50px 35px;text-align:center;
 }
-.section-head h2{
-  font-size:clamp(33px,5vw,55px);
-  letter-spacing:-2px;
-  margin-top:15px;
-  font-weight:900;
-}
-.section-head p{
-  color:var(--muted);
-  max-width:650px;
-  margin:15px auto 0;
-  line-height:1.8;
-}
-
-.panel{
-  max-width:1000px;
-  margin:auto;
-  padding:45px;
-  background:linear-gradient(145deg,#10264a,#071124);
-  border:1px solid var(--border);
-  border-radius:22px;
-  box-shadow:0 20px 70px #0006;
-}
-
-.about{text-align:center}
-.about h3{font-size:29px;margin-bottom:20px}
-.about p{color:var(--muted);line-height:1.9}
-
+.about-box h3{font-size:28px;margin-bottom:16px}
+.about-box p{color:var(--muted);line-height:1.9;max-width:720px;margin:auto}
 .stats{
-  display:flex;
-  justify-content:center;
-  flex-wrap:wrap;
-  gap:70px;
-  margin-top:40px;
+ display:grid;grid-template-columns:repeat(3,1fr);
+ gap:15px;margin-top:40px;
 }
-.stat strong{
-  display:block;
-  color:var(--cyan);
-  font-size:30px;
-  text-shadow:0 0 20px #00eaff66;
+.stat{
+ padding:22px 10px;border:1px solid var(--line);
+ border-radius:13px;background:#ffffff05;
 }
-.stat span{
-  color:var(--muted);
-  font-size:10px;
-  letter-spacing:2px;
-}
+.stat strong{display:block;color:var(--cyan);font-size:29px}
+.stat span{font-size:10px;color:var(--muted);letter-spacing:2px}
 
-.video-section{background:#ffffff04}
-
+.video-section{background:#ffffff03}
+.toolbar{
+ max-width:1100px;margin:0 auto 25px;
+ display:flex;gap:12px;flex-wrap:wrap;justify-content:space-between;
+}
+.search{
+ flex:1;min-width:200px;background:#0a1428;color:white;
+ border:1px solid var(--line);border-radius:10px;padding:14px 17px;
+ outline:none;
+}
+.search:focus{border-color:var(--cyan)}
+.filters{display:flex;gap:8px;flex-wrap:wrap}
+.filter{
+ border:1px solid var(--line);background:#0a1428;color:#a9bddb;
+ border-radius:8px;padding:12px 15px;font-size:10px;font-weight:900;
+}
+.filter.active{background:#0879df;color:white;border-color:#00dfff}
 .video-grid{
-  max-width:1100px;
-  margin:auto;
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-  gap:20px;
+ max-width:1100px;margin:auto;
+ display:grid;grid-template-columns:repeat(auto-fit,minmax(245px,1fr));
+ gap:20px;
 }
-
 .video-card{
-  background:linear-gradient(145deg,#10264a,#071124);
-  border:1px solid var(--border);
-  border-radius:17px;
-  overflow:hidden;
-  transition:.3s;
+ background:linear-gradient(145deg,#102445,#081226);
+ border:1px solid var(--line);border-radius:16px;
+ overflow:hidden;transition:.3s;
 }
 .video-card:hover{
-  transform:translateY(-7px);
-  box-shadow:0 15px 40px #007bff22;
+ transform:translateY(-7px);
+ border-color:#00cfff99;
+ box-shadow:0 15px 40px #007bff22;
 }
-
-.video-preview{
-  aspect-ratio:9/12;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  flex-direction:column;
-  gap:15px;
-  background:
-    radial-gradient(circle at center,#1554a5,#071124 70%);
+.video-thumb{
+ aspect-ratio:9/12;position:relative;
+ display:grid;place-items:center;
+ background:
+ radial-gradient(circle at 50% 40%,#1267ba,#071329 70%);
+ overflow:hidden;
 }
-.video-preview span{font-size:45px}
-.video-preview strong{font-size:13px;letter-spacing:2px}
-.video-info{padding:18px}
-.video-info p{color:var(--muted);font-size:12px;margin-bottom:16px}
-
-.video-actions{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  gap:8px;
+.video-thumb:before{
+ content:"";position:absolute;inset:-50%;
+ background:linear-gradient(120deg,transparent 40%,#ffffff12 50%,transparent 60%);
+ transform:translateX(-60%);
+ transition:.7s;
+}
+.video-card:hover .video-thumb:before{transform:translateX(60%)}
+.play{
+ position:relative;width:65px;height:65px;
+ display:grid;place-items:center;border-radius:50%;
+ background:#00cfff22;border:1px solid #00dfff99;
+ color:white;font-size:24px;box-shadow:0 0 35px #008cff55;
+}
+.video-tag{
+ position:absolute;top:14px;left:14px;
+ background:#071b35cc;border:1px solid var(--line);
+ color:var(--cyan);font-size:9px;font-weight:900;
+ padding:8px 10px;border-radius:5px;
+}
+.video-body{padding:17px}
+.video-body h3{font-size:14px;margin-bottom:8px}
+.video-body p{font-size:11px;color:var(--muted);line-height:1.6}
+.video-bottom{
+ display:flex;justify-content:space-between;align-items:center;
+ gap:8px;margin-top:16px;
 }
 .like{
-  background:#ffffff0b;
-  color:white;
-  border:1px solid var(--border);
-  border-radius:8px;
-  padding:10px 13px;
-  cursor:pointer;
+ padding:9px 12px;background:#ffffff08;
+ border:1px solid var(--line);border-radius:8px;color:#c6d9f3;
+ font-size:11px;
 }
-.like.active{color:#ff6699;border-color:#ff6699}
-
-.add-video-note{
-  text-align:center;
-  color:var(--muted);
-  font-size:12px;
-  line-height:1.8;
-  margin-top:25px;
+.like.active{color:#ff7bba;border-color:#ff7bba}
+.watch{
+ padding:10px 13px;background:#0879df;
+ border-radius:8px;font-size:10px;font-weight:900;
 }
+.empty{
+ grid-column:1/-1;text-align:center;padding:35px;
+ color:var(--muted);line-height:1.8;
+}
+.note{
+ max-width:900px;margin:22px auto 0;
+ color:#718aa9;text-align:center;font-size:11px;line-height:1.8;
+}
+.note a{color:var(--cyan)}
 
 .community{
-  max-width:850px;
-  margin:auto;
-  padding:35px;
-  border:1px solid var(--border);
-  border-radius:20px;
-  background:linear-gradient(145deg,#10264a,#071124);
+ max-width:850px;margin:auto;padding:30px;
 }
-
-.community h3{font-size:23px;margin-bottom:12px}
-.community>p{color:var(--muted);font-size:13px;line-height:1.8;margin-bottom:25px}
-
-.comment-form{display:grid;gap:13px}
-
-input,textarea{
-  width:100%;
-  padding:16px;
-  background:#030b1a;
-  color:white;
-  border:1px solid var(--border);
-  border-radius:10px;
-  outline:none;
+.community h3{font-size:22px;margin-bottom:10px}
+.community>p{color:var(--muted);font-size:12px;line-height:1.8;margin-bottom:20px}
+.comment-form{display:grid;gap:12px}
+.field{
+ width:100%;background:#040b19;border:1px solid var(--line);
+ border-radius:10px;padding:15px;color:white;outline:none;
 }
-input:focus,textarea:focus{border-color:var(--cyan)}
-textarea{min-height:110px;resize:vertical}
-
-.submit{
-  background:linear-gradient(100deg,#168cff,#00eaff);
-  border:0;
-  border-radius:10px;
-  padding:16px;
-  font-weight:900;
-  color:#001023;
-  cursor:pointer;
+.field:focus{border-color:var(--cyan)}
+textarea.field{min-height:100px;resize:vertical}
+.post{
+ background:linear-gradient(100deg,#167cff,#00dfff);
+ color:#001123;border:0;padding:15px;border-radius:9px;
+ font-size:11px;font-weight:900;
 }
-
 .comments{display:grid;gap:12px;margin-top:25px}
 .comment{
-  background:#ffffff08;
-  padding:17px;
-  border:1px solid var(--border);
-  border-radius:12px;
+ padding:16px;border:1px solid var(--line);
+ border-radius:11px;background:#ffffff05;
 }
-.comment strong{color:var(--cyan)}
-.comment p{color:#d9eaff;line-height:1.7;margin-top:8px}
-.comment small{color:#7794bc;display:block;margin-top:10px}
+.comment strong{color:var(--cyan);font-size:13px}
+.comment p{margin-top:8px;color:#d5e5fa;font-size:13px;line-height:1.7}
+.comment small{display:block;margin-top:10px;color:#6985a9;font-size:10px}
 
-.discord-section{
-  background:radial-gradient(ellipse at center,#104d9855,transparent 70%);
+.discord-area{
+ background:radial-gradient(ellipse at center,#103f8055,transparent 70%);
 }
 .discord-card{
-  max-width:950px;
-  margin:auto;
-  padding:70px 25px;
-  text-align:center;
-  border:1px solid #168cff77;
-  border-radius:25px;
-  background:linear-gradient(135deg,#12366b,#071124);
-  box-shadow:0 0 80px #007bff20;
+ max-width:1000px;margin:auto;padding:65px 25px;text-align:center;
+ background:linear-gradient(130deg,#132e5a,#09152c);
+ border:1px solid #4c83ff77;border-radius:23px;
+ box-shadow:0 0 75px #087bff22;
 }
-.discord-icon{
-  font-size:65px;
-  margin-bottom:25px;
-  filter:drop-shadow(0 0 20px #168cff);
+.discord-symbol{
+ font-size:65px;margin-bottom:22px;
+ filter:drop-shadow(0 0 20px #168cff);
 }
-.discord-card h2{
-  font-size:clamp(32px,5vw,53px);
-  margin-bottom:18px;
-}
+.discord-card h2{font-size:clamp(32px,5vw,55px);margin-bottom:15px}
 .discord-card p{
-  max-width:600px;
-  color:var(--muted);
-  line-height:1.9;
-  margin:0 auto 30px;
+ color:var(--muted);max-width:600px;
+ line-height:1.9;margin:0 auto 28px;
 }
+.discord-link{
+ display:inline-block;padding:17px 28px;
+ border-radius:9px;background:#5865f2;
+ font-size:11px;font-weight:900;
+ box-shadow:0 10px 30px #5865f255;
+ transition:.3s;
+}
+.discord-link:hover{transform:translateY(-5px)}
 
-footer{
-  border-top:1px solid var(--border);
-  padding:45px 20px;
-  text-align:center;
-  color:#7892b5;
-  font-size:12px;
-  line-height:2.1;
+.footer{
+ padding:45px 20px;text-align:center;
+ border-top:1px solid var(--line);
+ color:#7189a9;font-size:11px;line-height:2.2;
 }
-footer strong{color:var(--cyan)}
-footer a:hover{color:var(--cyan)}
+.footer strong{color:var(--cyan)}
+.footer a:hover{color:var(--cyan)}
 
-.reveal{
-  opacity:0;
-  transform:translateY(25px);
-  transition:.8s ease;
+.toast{
+ position:fixed;bottom:25px;left:50%;
+ transform:translate(-50%,20px);
+ opacity:0;pointer-events:none;
+ background:#102a4b;border:1px solid #00dfff88;
+ padding:14px 20px;border-radius:10px;
+ color:white;font-size:12px;z-index:300;
+ transition:.3s;
 }
+.toast.show{opacity:1;transform:translate(-50%,0)}
+.reveal{opacity:0;transform:translateY(20px);transition:.7s}
 .reveal.visible{opacity:1;transform:translateY(0)}
 
 @media(max-width:700px){
-  header{padding:17px 5%}
-  .menu-toggle{display:block}
-  nav{
-    display:none;
-    position:absolute;
-    top:68px;
-    left:0;
-    width:100%;
-    padding:25px;
-    background:#061126;
-    flex-direction:column;
-    text-align:center;
-    border-bottom:1px solid var(--border);
-  }
-  nav.open{display:flex}
-  nav a{padding:8px}
-  .hero h1{letter-spacing:-4px}
-  section{padding:75px 6%}
-  .panel{padding:28px 20px}
-  .stats{gap:30px}
-  .community{padding:22px}
+ header{height:68px;padding:0 5%}
+ .menu{display:block}
+ .nav{
+  display:none;position:absolute;top:68px;left:0;width:100%;
+  padding:20px;background:#071329;flex-direction:column;
+  gap:22px;text-align:center;border-bottom:1px solid var(--line);
+ }
+ .nav.open{display:flex}
+ .hero h1{letter-spacing:-4px}
+ section{padding:75px 6%}
+ .about-box{padding:30px 20px}
+ .stats{gap:8px}
+ .stat strong{font-size:22px}
+ .stat span{font-size:8px}
+ .toolbar{flex-direction:column}
+ .filters{justify-content:center}
+ .community{padding:22px}
+}
+@media(prefers-reduced-motion:reduce){
+ *,*:before,*:after{animation:none!important;scroll-behavior:auto!important;transition:none!important}
+ .reveal{opacity:1;transform:none}
 }
 </style>
 </head>
 
 <body>
 
-<canvas id="particles"></canvas>
+<canvas id="space"></canvas>
+<div class="toast" id="toast"></div>
 
 <header>
-  <a href="#home" class="logo">W1ETO<span>.</span>company</a>
-
-  <button class="menu-toggle" id="menuToggle" aria-label="Menü öffnen">☰</button>
-
-  <nav id="nav">
-    <a href="#home">HOME</a>
-    <a href="#about">ABOUT</a>
-    <a href="#videos">VIDEOS</a>
-    <a href="#community">COMMUNITY</a>
-    <a href="#discord">DISCORD</a>
-  </nav>
+ <a href="#home" class="brand">W1ETO<span>.</span>company</a>
+ <button class="menu" id="menu" aria-label="Menü öffnen">☰</button>
+ <nav class="nav" id="nav">
+  <a href="#home">HOME</a>
+  <a href="#about">BRAND</a>
+  <a href="#videos">VIDEOS</a>
+  <a href="#community">COMMUNITY</a>
+  <a href="#discord" class="nav-join">JOIN DISCORD ↗</a>
+ </nav>
 </header>
 
 <main>
 
 <section class="hero" id="home">
-  <div class="hero-content">
-    <div class="eyebrow">✦ THE ULTIMATE CREATOR EXPERIENCE ✦</div>
-
-    <h1>W1ETO<span class="gradient">.</span><br>
-      <span class="gradient">COMPANY</span>
-    </h1>
-
-    <p>
-      CREATE YOUR WORLD.<br>
-      BUILD YOUR COMMUNITY.<br>
-      MAKE YOUR OWN LEGACY.
-    </p>
-
-    <div class="actions">
-      <a class="btn primary" href="https://www.tiktok.com/@W1ETO.company" target="_blank" rel="noopener">♫ TIKTOK</a>
-      <a class="btn discord-btn" href="https://discord.gg/Xy2KTmJUbR" target="_blank" rel="noopener">DISCORD ↗</a>
-      <a class="btn secondary" href="#videos">EXPLORE ↓</a>
-    </div>
-
-    <div class="scroll">SCROLL TO EXPLORE ↓</div>
+ <div class="hero-glow"></div>
+ <div class="hero-content">
+  <div class="status"><span class="dot"></span> W1ETO SYSTEM ONLINE</div>
+  <h1>W1ETO<span class="gradient">.</span><br><span class="gradient">NEXUS X</span></h1>
+  <p>
+   THE FUTURE OF CONTENT.<br>
+   YOUR COMMUNITY. YOUR UNIVERSE.<br>
+   WELCOME TO THE NEXT LEVEL.
+  </p>
+  <div class="actions">
+   <a class="btn primary" href="#videos">▶ EXPLORE CONTENT</a>
+   <a class="btn discord-btn" href="https://discord.gg/Xy2KTmJUbR" target="_blank" rel="noopener">DISCORD ↗</a>
+   <a class="btn ghost" href="https://www.tiktok.com/@W1ETO.company" target="_blank" rel="noopener">TIKTOK ↗</a>
   </div>
+  <div class="hero-foot">SCROLL TO ENTER THE UNIVERSE ↓</div>
+ </div>
 </section>
 
+<div class="ticker">
+ <div class="ticker-track">
+  <span>W1ETO COMPANY ✦ CREATE ✦ CONNECT ✦ DISCOVER ✦ NEXUS X ✦ BLUE CORE ✦</span>
+  <span>W1ETO COMPANY ✦ CREATE ✦ CONNECT ✦ DISCOVER ✦ NEXUS X ✦ BLUE CORE ✦</span>
+ </div>
+</div>
+
 <section id="about" class="reveal">
-  <div class="section-head">
-    <small>DISCOVER THE BRAND</small>
-    <h2>MORE THAN CONTENT.</h2>
-    <p>Eine Marke. Eine Community. Eine gemeinsame Leidenschaft.</p>
+ <div class="heading">
+  <small>01 / THE BRAND</small>
+  <h2>MORE THAN A NAME.</h2>
+  <p>Ein Creator. Eine Marke. Eine Community. Ein ganzes Universum.</p>
+ </div>
+ <div class="glass about-box">
+  <h3>WELCOME TO W1ETO.company</h3>
+  <p>
+   Hier findest du alles rund um W1ETO.company.
+   Entdecke unsere Inhalte, besuche unsere Social-Media-Kanäle
+   und werde Teil unserer Community.
+   Das ist unser digitaler Treffpunkt.
+  </p>
+  <div class="stats">
+   <div class="stat"><strong>∞</strong><span>CREATIVITY</span></div>
+   <div class="stat"><strong>24/7</strong><span>COMMUNITY</span></div>
+   <div class="stat"><strong>100%</strong><span>W1ETO</span></div>
   </div>
-
-  <div class="panel about">
-    <h3>WELCOME TO W1ETO.company</h3>
-    <p>
-      Willkommen auf der offiziellen W1ETO-Plattform.
-      Entdecke unsere Videos, vernetze dich mit anderen
-      Mitgliedern und werde Teil unserer Community.
-      Hier dreht sich alles um Content und Kreativität.
-    </p>
-
-    <div class="stats">
-      <div class="stat"><strong>∞</strong><span>CREATIVITY</span></div>
-      <div class="stat"><strong>24/7</strong><span>COMMUNITY</span></div>
-      <div class="stat"><strong>01</strong><span>BRAND</span></div>
-    </div>
-  </div>
+ </div>
 </section>
 
 <section class="video-section reveal" id="videos">
-  <div class="section-head">
-    <small>WATCH & DISCOVER</small>
-    <h2>THE VIDEO UNIVERSE</h2>
-    <p>Die Inhalte von W1ETO.company – direkt auf einer Plattform.</p>
+ <div class="heading">
+  <small>02 / CONTENT CENTER</small>
+  <h2>VIDEO UNIVERSE.</h2>
+  <p>Finde deine Lieblingsinhalte. Entdecke neue Videos und besuche den Creator.</p>
+ </div>
+
+ <div class="toolbar">
+  <input class="search" id="search" placeholder="⌕  Videos durchsuchen..." aria-label="Videos durchsuchen">
+  <div class="filters">
+   <button class="filter active" data-filter="all">ALL</button>
+   <button class="filter" data-filter="new">NEW</button>
+   <button class="filter" data-filter="popular">POPULAR</button>
   </div>
+ </div>
 
-  <div class="video-grid" id="videoGrid"></div>
+ <div class="video-grid" id="videoGrid"></div>
 
-  <p class="add-video-note">
-    Neue Videos können über die VIDEO_URLS-Liste im Code ergänzt werden.
-    Alle Videos auf TikTok ansehen:
-    <a href="https://www.tiktok.com/@W1ETO.company" target="_blank" rel="noopener" style="color:var(--cyan)">TikTok-Profil ↗</a>
-  </p>
+ <p class="note">
+  Hinweis: Trage deine echten TikTok-Video-Links im VIDEO_DATA-Array
+  im Script ein. Ohne Videolinks kann die Seite keine Videos automatisch
+  aus TikTok laden. Das Creator-Profil findest du
+  <a href="https://www.tiktok.com/@W1ETO.company" target="_blank" rel="noopener">hier ↗</a>.
+ </p>
 </section>
 
-<section id="community" class="reveal">
-  <div class="section-head">
-    <small>YOUR VOICE MATTERS</small>
-    <h2>COMMUNITY WALL</h2>
-    <p>Deine Community. Deine Meinung. Deine Nachrichten.</p>
-  </div>
-
-  <div class="community">
-    <h3>💬 Leave your message</h3>
-    <p>Hinterlasse einen Kommentar für andere Besucher.</p>
-
-    <form class="comment-form" id="commentForm">
-      <input id="username" maxlength="30" placeholder="Dein Name" required>
-      <textarea id="message" maxlength="500" placeholder="Was möchtest du sagen?" required></textarea>
-      <button class="submit" type="submit">POST COMMENT ↗</button>
-    </form>
-
-    <div class="comments" id="comments"></div>
-  </div>
+<section class="reveal" id="community">
+ <div class="heading">
+  <small>03 / COMMUNITY HUB</small>
+  <h2>YOUR VOICE. YOUR SPACE.</h2>
+  <p>Schreib eine Nachricht und werde Teil der W1ETO-Community.</p>
+ </div>
+ <div class="glass community">
+  <h3>✦ COMMUNITY WALL</h3>
+  <p>Teile deine Gedanken mit anderen Besuchern.</p>
+  <form class="comment-form" id="commentForm">
+   <input class="field" id="name" maxlength="30" placeholder="Dein Name" required>
+   <textarea class="field" id="message" maxlength="500" placeholder="Deine Nachricht..." required></textarea>
+   <button class="post" type="submit">SEND MESSAGE ↗</button>
+  </form>
+  <div class="comments" id="comments"></div>
+ </div>
 </section>
 
-<section class="discord-section reveal" id="discord">
-  <div class="discord-card">
-    <div class="discord-icon">💠</div>
-    <div class="section-head" style="margin-bottom:20px">
-      <small>JOIN THE COMMUNITY</small>
-      <h2>ENTER THE BLUE ZONE.</h2>
-    </div>
-    <p>
-      Werde Teil des offiziellen W1ETO.company Discord-Servers.
-      Triff neue Leute, tausche dich aus und bleibe auf dem Laufenden.
-    </p>
-    <a class="btn discord-btn" href="https://discord.gg/Xy2KTmJUbR" target="_blank" rel="noopener">
-      JOIN OUR DISCORD ↗
-    </a>
+<section class="discord-area reveal" id="discord">
+ <div class="discord-card">
+  <div class="discord-symbol">◈</div>
+  <div class="heading">
+   <small>04 / OFFICIAL COMMUNITY</small>
+   <h2>ENTER THE BLUE ZONE.</h2>
+   <p>
+    Der nächste Schritt beginnt auf Discord.
+    Triff die Community, tausche dich aus und werde Teil von W1ETO.company.
+   </p>
   </div>
+  <a class="discord-link" href="https://discord.gg/Xy2KTmJUbR" target="_blank" rel="noopener">
+   JOIN THE DISCORD SERVER ↗
+  </a>
+ </div>
+</section>
+
+<section class="reveal" id="social">
+ <div class="heading">
+  <small>05 / FOLLOW THE JOURNEY</small>
+  <h2>STAY CONNECTED.</h2>
+  <p>Verpasse keine neuen Inhalte von W1ETO.company.</p>
+ </div>
+ <div class="actions">
+  <a class="btn primary" href="https://www.tiktok.com/@W1ETO.company" target="_blank" rel="noopener">♫ FOLLOW ON TIKTOK</a>
+  <a class="btn discord-btn" href="https://discord.gg/Xy2KTmJUbR" target="_blank" rel="noopener">JOIN DISCORD</a>
+ </div>
 </section>
 
 </main>
 
-<footer>
-  <strong>W1ETO.company</strong><br>
-  THE ULTIMATE CREATOR EXPERIENCE<br>
-  <a href="#home">BACK TO TOP ↑</a><br><br>
-  © 2026 W1ETO.company · ALL RIGHTS RESERVED
+<footer class="footer">
+ <strong>W1ETO.company — NEXUS X</strong><br>
+ CREATE YOUR WORLD. BUILD YOUR LEGACY.<br>
+ <a href="#home">BACK TO TOP ↑</a><br><br>
+ © 2026 W1ETO.company · ALL RIGHTS RESERVED
 </footer>
 
 <script>
-// ======================================
-// W1ETO VIDEO CONFIGURATION
-// Hier deine TikTok-Videolinks eintragen.
-// ======================================
+// ===========================================
+// 1. VIDEO-DATEN
+// Füge echte TikTok-Links hier hinzu.
+// ===========================================
 
-const VIDEO_URLS = [
-  // "https://www.tiktok.com/@W1ETO.company/video/VIDEO_ID",
-  // "https://www.tiktok.com/@W1ETO.company/video/VIDEO_ID"
+const VIDEO_DATA = [
+ // Beispiel:
+ // {title:"Mein Video",url:"https://www.tiktok.com/@W1ETO.company/video/123456789",category:"new"}
 ];
 
-const grid = document.getElementById("videoGrid");
+// ===========================================
+// 2. VIDEO-GALERIE
+// ===========================================
+
+const grid=document.getElementById("videoGrid");
+const search=document.getElementById("search");
+let currentFilter="all";
+
+function showToast(text){
+ const toast=document.getElementById("toast");
+ toast.textContent=text;
+ toast.classList.add("show");
+ clearTimeout(showToast.timer);
+ showToast.timer=setTimeout(()=>toast.classList.remove("show"),2300);
+}
 
 function renderVideos(){
-  grid.replaceChildren();
+ grid.replaceChildren();
+ const query=search.value.toLowerCase();
 
-  if(!VIDEO_URLS.length){
-    const card = document.createElement("article");
-    card.className = "video-card";
+ const list=VIDEO_DATA.filter(v=>{
+  const matches=(v.title||"").toLowerCase().includes(query);
+  const category=currentFilter==="all"||
+   (currentFilter==="popular"&&v.category==="popular")||
+   (currentFilter==="new"&&v.category==="new");
+  return matches&&category;
+ });
 
-    const preview = document.createElement("div");
-    preview.className = "video-preview";
-    preview.innerHTML = "<span>▶</span><strong>W1ETO VIDEO ZONE</strong>";
+ if(!list.length){
+  const empty=document.createElement("div");
+  empty.className="empty";
+  empty.textContent=VIDEO_DATA.length
+   ?"Keine passenden Videos gefunden."
+   :"Noch keine Videos eingetragen. Deine echten TikTok-Links kannst du oben in VIDEO_DATA ergänzen.";
+  grid.append(empty);
+  return;
+ }
 
-    const info = document.createElement("div");
-    info.className = "video-info";
+ list.forEach((video,index)=>{
+  const card=document.createElement("article");
+  card.className="video-card";
 
-    const description = document.createElement("p");
-    description.textContent = "Deine TikTok-Videos erscheinen hier, sobald du ihre Videolinks in VIDEO_URLS einfügst.";
+  const thumb=document.createElement("div");
+  thumb.className="video-thumb";
 
-    const link = document.createElement("a");
-    link.className = "btn primary";
-    link.href = "https://www.tiktok.com/@W1ETO.company";
-    link.target = "_blank";
-    link.rel = "noopener";
-    link.textContent = "VIDEOS ANSEHEN ↗";
+  const tag=document.createElement("span");
+  tag.className="video-tag";
+  tag.textContent=video.category==="popular"?"POPULAR":"W1ETO VIDEO";
 
-    info.append(description,link);
-    card.append(preview,info);
-    grid.append(card);
-    return;
+  const play=document.createElement("span");
+  play.className="play";
+  play.textContent="▶";
+
+  thumb.append(tag,play);
+
+  const body=document.createElement("div");
+  body.className="video-body";
+
+  const title=document.createElement("h3");
+  title.textContent=video.title||"W1ETO Video";
+
+  const description=document.createElement("p");
+  description.textContent="Official W1ETO.company content";
+
+  const bottom=document.createElement("div");
+  bottom.className="video-bottom";
+
+  const like=document.createElement("button");
+  like.className="like";
+
+  const key="w1eto_nexus_like_"+index;
+  let liked=localStorage.getItem(key)==="true";
+
+  function update(){
+   like.textContent=liked?"♥ LIKED":"♡ LIKE";
+   like.classList.toggle("active",liked);
   }
+  update();
 
-  VIDEO_URLS.forEach((url,index)=>{
-    const card = document.createElement("article");
-    card.className = "video-card";
-
-    const preview = document.createElement("div");
-    preview.className = "video-preview";
-    preview.innerHTML = "<span>▶</span><strong>W1ETO VIDEO "+(index+1)+"</strong>";
-
-    const info = document.createElement("div");
-    info.className = "video-info";
-
-    const description = document.createElement("p");
-    description.textContent = "W1ETO.company · TikTok Video";
-
-    const actions = document.createElement("div");
-    actions.className = "video-actions";
-
-    const key = "w1eto_like_"+index;
-    let liked = localStorage.getItem(key)==="true";
-
-    const like = document.createElement("button");
-    like.className = "like"+(liked?" active":"");
-
-    function updateLike(){
-      like.textContent = (liked?"♥":"♡")+" "+(liked?"Geliked":"Gefällt mir");
-      like.classList.toggle("active",liked);
-    }
-
-    like.addEventListener("click",()=>{
-      liked=!liked;
-      localStorage.setItem(key,String(liked));
-      updateLike();
-    });
-    updateLike();
-
-    const watch = document.createElement("a");
-    watch.className = "btn primary";
-    watch.href = url;
-    watch.target = "_blank";
-    watch.rel = "noopener";
-    watch.textContent = "WATCH ↗";
-
-    actions.append(like,watch);
-    info.append(description,actions);
-    card.append(preview,info);
-    grid.append(card);
+  like.addEventListener("click",()=>{
+   liked=!liked;
+   localStorage.setItem(key,String(liked));
+   update();
+   showToast(liked?"Video geliked!":"Like entfernt");
   });
+
+  const watch=document.createElement("a");
+  watch.className="watch";
+  watch.href=video.url;
+  watch.target="_blank";
+  watch.rel="noopener";
+  watch.textContent="WATCH ↗";
+
+  bottom.append(like,watch);
+  body.append(title,description,bottom);
+  card.append(thumb,body);
+  grid.append(card);
+ });
 }
+
+search.addEventListener("input",renderVideos);
+
+document.querySelectorAll(".filter").forEach(button=>{
+ button.addEventListener("click",()=>{
+  document.querySelectorAll(".filter").forEach(b=>b.classList.remove("active"));
+  button.classList.add("active");
+  currentFilter=button.dataset.filter;
+  renderVideos();
+ });
+});
+
 renderVideos();
 
-// ======================================
-// COMMUNITY COMMENTS - LOCAL DEMO
-// ======================================
+// ===========================================
+// 3. KOMMENTARE - LOKALE DEMO
+// ===========================================
 
-const form=document.getElementById("commentForm");
-const box=document.getElementById("comments");
 let comments=[];
-
 try{
-  comments=JSON.parse(localStorage.getItem("w1eto_comments")||"[]");
-  if(!Array.isArray(comments))comments=[];
-}catch{comments=[];}
+ comments=JSON.parse(localStorage.getItem("w1eto_nexus_comments")||"[]");
+ if(!Array.isArray(comments))comments=[];
+}catch{comments=[]}
+
+const commentBox=document.getElementById("comments");
 
 function renderComments(){
-  box.replaceChildren();
+ commentBox.replaceChildren();
 
-  if(!comments.length){
-    const empty=document.createElement("p");
-    empty.textContent="Noch keine Kommentare. Sei der Erste!";
-    empty.style.color="#8ba5c9";
-    box.append(empty);
-    return;
-  }
+ if(!comments.length){
+  const empty=document.createElement("p");
+  empty.textContent="Noch keine Nachrichten. Sei der Erste!";
+  empty.style.color="#8da5c9";
+  commentBox.append(empty);
+  return;
+ }
 
-  comments.slice(-30).reverse().forEach(c=>{
-    const item=document.createElement("div");
-    item.className="comment";
+ comments.slice(-30).reverse().forEach(c=>{
+  const item=document.createElement("article");
+  item.className="comment";
 
-    const name=document.createElement("strong");
-    name.textContent=c.name;
+  const name=document.createElement("strong");
+  name.textContent=c.name;
 
-    const message=document.createElement("p");
-    message.textContent=c.message;
+  const message=document.createElement("p");
+  message.textContent=c.message;
 
-    const date=document.createElement("small");
-    date.textContent=c.date;
+  const date=document.createElement("small");
+  date.textContent=c.date;
 
-    item.append(name,message,date);
-    box.append(item);
-  });
+  item.append(name,message,date);
+  commentBox.append(item);
+ });
 }
 
-form.addEventListener("submit",e=>{
-  e.preventDefault();
+document.getElementById("commentForm").addEventListener("submit",e=>{
+ e.preventDefault();
 
-  const name=document.getElementById("username").value.trim();
-  const message=document.getElementById("message").value.trim();
+ const name=document.getElementById("name").value.trim();
+ const message=document.getElementById("message").value.trim();
 
-  if(!name||!message)return;
+ if(!name||!message)return;
 
-  comments.push({
-    name,
-    message,
-    date:new Date().toLocaleString("de-DE")
-  });
+ comments.push({
+  name,
+  message,
+  date:new Date().toLocaleString("de-DE")
+ });
 
-  try{
-    localStorage.setItem("w1eto_comments",JSON.stringify(comments));
-  }catch{
-    comments.pop();
-    alert("Speichern nicht möglich.");
-    return;
-  }
+ try{
+  localStorage.setItem("w1eto_nexus_comments",JSON.stringify(comments));
+ }catch{
+  comments.pop();
+  showToast("Speichern nicht möglich.");
+  return;
+ }
 
-  form.reset();
-  renderComments();
+ e.target.reset();
+ renderComments();
+ showToast("Nachricht gespeichert!");
 });
 
 renderComments();
 
-// ======================================
-// MOBILE NAVIGATION
-// ======================================
+// ===========================================
+// 4. MOBILE NAVIGATION
+// ===========================================
 
-const menu=document.getElementById("menuToggle");
+const menu=document.getElementById("menu");
 const nav=document.getElementById("nav");
 
-menu.addEventListener("click",()=>{
-  nav.classList.toggle("open");
-});
-
+menu.addEventListener("click",()=>nav.classList.toggle("open"));
 nav.querySelectorAll("a").forEach(a=>{
-  a.addEventListener("click",()=>nav.classList.remove("open"));
+ a.addEventListener("click",()=>nav.classList.remove("open"));
 });
 
-// ======================================
-// SCROLL ANIMATIONS
-// ======================================
+// ===========================================
+// 5. SCROLL ANIMATIONS
+// ===========================================
 
 const observer=new IntersectionObserver(entries=>{
-  entries.forEach(entry=>{
-    if(entry.isIntersecting){
-      entry.target.classList.add("visible");
-      observer.unobserve(entry.target);
-    }
-  });
-},{threshold:.12});
+ entries.forEach(entry=>{
+  if(entry.isIntersecting){
+   entry.target.classList.add("visible");
+   observer.unobserve(entry.target);
+  }
+ });
+},{threshold:.1});
 
 document.querySelectorAll(".reveal").forEach(el=>observer.observe(el));
 
-// ======================================
-// ANIMATED BLUE PARTICLES
-// ======================================
+// ===========================================
+// 6. ANIMIERTE PARTIKEL
+// ===========================================
 
-const canvas=document.getElementById("particles");
+const canvas=document.getElementById("space");
 const ctx=canvas.getContext("2d");
 let particles=[];
 
 function resize(){
-  const dpr=Math.min(window.devicePixelRatio||1,2);
-  canvas.width=innerWidth*dpr;
-  canvas.height=innerHeight*dpr;
-  ctx.setTransform(dpr,0,0,dpr,0,0);
+ const dpr=Math.min(devicePixelRatio||1,2);
+ canvas.width=innerWidth*dpr;
+ canvas.height=innerHeight*dpr;
+ ctx.setTransform(dpr,0,0,dpr,0,0);
 
-  particles=Array.from({length:Math.min(65,Math.floor(innerWidth/18))},()=>({
-    x:Math.random()*innerWidth,
-    y:Math.random()*innerHeight,
-    r:Math.random()*1.8+.5,
-    speed:Math.random()*.35+.12
-  }));
+ const amount=Math.min(90,Math.floor(innerWidth/13));
+ particles=Array.from({length:amount},()=>({
+  x:Math.random()*innerWidth,
+  y:Math.random()*innerHeight,
+  r:Math.random()*1.5+.4,
+  speed:Math.random()*.35+.1
+ }));
 }
 
+let frame=0;
 function animate(){
+ frame++;
+ if(frame%2===0){
   ctx.clearRect(0,0,innerWidth,innerHeight);
-
   particles.forEach(p=>{
-    p.y-=p.speed;
-    if(p.y<0){
-      p.y=innerHeight;
-      p.x=Math.random()*innerWidth;
-    }
+   p.y-=p.speed;
+   if(p.y<0){p.y=innerHeight;p.x=Math.random()*innerWidth}
 
-    ctx.beginPath();
-    ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
-    ctx.fillStyle="#39baff";
-    ctx.shadowBlur=12;
-    ctx.shadowColor="#168cff";
-    ctx.fill();
+   ctx.beginPath();
+   ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
+   ctx.fillStyle="#58caff";
+   ctx.shadowBlur=12;
+   ctx.shadowColor="#168cff";
+   ctx.fill();
   });
-
-  requestAnimationFrame(animate);
+ }
+ requestAnimationFrame(animate);
 }
 
 resize();
 window.addEventListener("resize",resize);
-animate();
+if(!matchMedia("(prefers-reduced-motion: reduce)").matches)animate();
 </script>
 
 </body>
